@@ -38,10 +38,7 @@ const Header = () => {
             <img 
               src={logoFocco} 
               alt="FOCCO Mindfulness" 
-              className="h-16 md:h-20 w-auto transition-all duration-300 group-hover:scale-105"
-              style={{
-                filter: 'brightness(0) invert(1) drop-shadow(0 2px 8px rgba(44, 95, 111, 0.3))'
-              }}
+              className="h-16 md:h-20 w-auto transition-all duration-300 group-hover:scale-105 rounded-lg"
             />
           </Link>
 

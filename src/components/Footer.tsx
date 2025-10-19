@@ -25,14 +25,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="space-y-4">
-            <img 
-              src={logoFocco} 
-              alt="FOCCO Mindfulness" 
-              className="h-24 md:h-28 w-auto"
-              style={{
-                filter: 'brightness(0) invert(1) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2))'
-              }}
-            />
+            <div className="bg-white/10 rounded-lg p-3 inline-block backdrop-blur-sm">
+              <img 
+                src={logoFocco} 
+                alt="FOCCO Mindfulness" 
+                className="h-20 md:h-24 w-auto"
+              />
+            </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
               Transformando vidas através de clareza mental, inteligência emocional e propósito autêntico.
             </p>
