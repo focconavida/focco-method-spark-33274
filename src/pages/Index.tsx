@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import GoogleReviews from '@/components/GoogleReviews';
 import heroImage from '@/assets/hero-bg.jpg';
 import clarityImage from '@/assets/clarity-illustration.jpg';
 
@@ -58,27 +59,6 @@ const Index = () => {
     { icon: 'fa-chart-line', text: 'Alta performance sustentável' },
     { icon: 'fa-shield-halved', text: 'Resiliência mental' },
     { icon: 'fa-handshake', text: 'Relacionamentos saudáveis' },
-  ];
-
-  const depoimentos = [
-    {
-      nome: 'Ana Silva',
-      profissao: 'Executiva de Marketing',
-      texto: 'O Método FOCCO transformou completamente minha visão sobre liderança. Aprendi a equilibrar alta performance com bem-estar emocional.',
-      avatar: 'AS',
-    },
-    {
-      nome: 'Carlos Mendes',
-      profissao: 'Empreendedor',
-      texto: 'Encontrei clareza e propósito que faltavam no meu negócio. As ferramentas são práticas e os resultados, concretos.',
-      avatar: 'CM',
-    },
-    {
-      nome: 'Marina Costa',
-      profissao: 'Psicóloga',
-      texto: 'Uma abordagem inovadora que integra autoconhecimento com ação. Recomendo para quem busca transformação real.',
-      avatar: 'MC',
-    },
   ];
 
   return (
@@ -214,38 +194,16 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Depoimentos Section */}
+      {/* Avaliações Google Section */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="font-heading mb-4">O que dizem nossos clientes</h2>
             <p className="text-muted-foreground text-lg">
-              Transformações reais de pessoas reais
+              Avaliações reais do Google Meu Negócio
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {depoimentos.map((depoimento, index) => (
-              <div key={index} className="card-elevated">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg">
-                    {depoimento.avatar}
-                  </div>
-                  <div>
-                    <h4 className="font-heading font-bold">{depoimento.nome}</h4>
-                    <p className="text-sm text-muted-foreground">{depoimento.profissao}</p>
-                  </div>
-                </div>
-                <p className="text-muted-foreground italic leading-relaxed">
-                  "{depoimento.texto}"
-                </p>
-                <div className="flex gap-1 mt-4 text-accent">
-                  {[...Array(5)].map((_, i) => (
-                    <i key={i} className="fas fa-star"></i>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+          <GoogleReviews />
         </div>
       </section>
 
