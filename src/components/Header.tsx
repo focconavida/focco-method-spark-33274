@@ -32,13 +32,13 @@ const Header = () => {
       }`}
     >
       <nav className="container-custom">
-        <div className="flex items-center justify-between h-24 md:h-28 lg:h-32">
+        <div className="flex items-center justify-between h-32 md:h-36 lg:h-40">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img
               src={logoFocco}
               alt="FOCCO Mindfulness"
-              className="h-20 md:h-24 lg:h-28 xl:h-32 w-auto transition-all duration-300 group-hover:scale-105"
+              className="h-28 md:h-32 lg:h-36 xl:h-40 w-auto transition-all duration-300 group-hover:scale-105"
               style={{
                 filter: 'brightness(0) saturate(100%) invert(24%) sepia(69%) saturate(1859%) hue-rotate(175deg) brightness(95%) contrast(90%)'
               }}

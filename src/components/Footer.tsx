@@ -34,7 +34,7 @@ const Footer = () => {
             <img
               src={logoFocco}
               alt="FOCCO Mindfulness"
-              className="h-40 md:h-48 lg:h-56 w-auto"
+              className="h-52 md:h-64 lg:h-72 w-auto"
               style={{
                 filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
               }}
