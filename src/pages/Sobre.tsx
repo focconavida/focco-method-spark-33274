@@ -1,9 +1,10 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import mentorImage from '@/assets/mentor.jpg';
+import valeriaProfile from '@/assets/valeria-profile.jpg';
+import beneficiosFocco from '@/assets/beneficios-focco.jpg';
 
 const Sobre = () => {
-  const whatsappNumber = '558399387450';
+  const whatsappNumber = '5583993787450';
   const whatsappMessage = 'Olá, seja bem-vindo! Como posso te ajudar?';
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
   const valores = [
@@ -81,9 +82,9 @@ const Sobre = () => {
             </div>
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl transform rotate-3"></div>
-              <img 
-                src={mentorImage} 
-                alt="Mentor do Método FOCCO" 
+              <img
+                src={beneficiosFocco}
+                alt="Benefícios do Método FOCCO"
                 className="relative rounded-2xl shadow-xl w-full"
               />
             </div>
@@ -163,41 +164,121 @@ const Sobre = () => {
         </div>
       </section>
 
-      {/* Fundador Section */}
+      {/* Quem Sou - Valéria Dias */}
       <section className="section-padding bg-secondary/20">
         <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="font-heading text-center mb-12">Sobre o Fundador</h2>
-            <div className="grid md:grid-cols-3 gap-8 items-start">
-              <div className="md:col-span-1">
-                <img 
-                  src={mentorImage} 
-                  alt="Fundador do Método FOCCO" 
+          <div className="max-w-6xl mx-auto">
+            <h2 className="font-heading text-center mb-4">Quem Sou</h2>
+            <h3 className="text-2xl text-center text-primary font-semibold mb-12">Valéria Dias</h3>
+
+            <div className="grid md:grid-cols-5 gap-8 items-start mb-12">
+              <div className="md:col-span-2">
+                <img
+                  src={valeriaProfile}
+                  alt="Valéria Dias - Idealizadora do Método FOCCO"
                   className="rounded-2xl shadow-lg w-full"
                 />
               </div>
-              <div className="md:col-span-2 space-y-4">
+              <div className="md:col-span-3 space-y-4">
                 <p className="text-muted-foreground leading-relaxed">
-                  Com mais de 15 anos de experiência em desenvolvimento humano, psicologia aplicada e coaching executivo, o criador do Método FOCCO dedicou sua carreira a entender os mecanismos da transformação pessoal profunda.
+                  A história de Valéria é sobre <strong>redescoberta e autotransformação</strong>. Depois de 12 anos lidando com dor crônica e um cansaço que parecia interminável, ela encontrou no mindfulness uma verdadeira luz no fim do túnel.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Formado em Psicologia e com especializações em Neurociência Aplicada, Inteligência Emocional e Mindfulness, combina conhecimento científico com uma abordagem humanizada e prática.
+                  "Através dessa prática, consegui melhorar minha qualidade de vida de um jeito que nunca imaginei possível", conta Valéria. O impacto foi tão profundo que ela decidiu ir além: se formou <strong>Instrutora de Mindfulness</strong>, tornou-se <strong>Analista Comportamental</strong> e se especializou em <strong>Neurociência e Comportamento</strong>, se tornando terapeuta integrativa.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Já trabalhou com executivos, empreendedores e profissionais de diversas áreas, sempre com foco em resultados mensuráveis e transformações sustentáveis.
+                  Hoje, sua missão é ajudar pessoas a descobrirem os mesmos benefícios que transformaram sua vida. Ela acredita que podemos treinar nossa mente para conseguirmos mais foco, através da observação, cultivando mais consciência e clareza para chegar nos nossos objetivos com saúde e bem-estar, encontrando paz em meio às adversidades.
                 </p>
-                <div className="flex gap-4 pt-4">
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <i className="fas fa-graduation-cap text-primary"></i>
-                    <span>Psicologia</span>
+                <div className="bg-primary/5 rounded-lg p-4 border-l-4 border-primary">
+                  <p className="text-primary font-semibold text-lg">
+                    <i className="fas fa-users mr-2"></i>
+                    Mais de 1.000 pessoas impactadas pelo Método FOCCO
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Credenciais */}
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h3 className="font-heading text-2xl mb-6 text-center">Formação e Credenciais</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <i className="fas fa-brain text-primary text-xl"></i>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <i className="fas fa-brain text-primary"></i>
-                    <span>Neurociência</span>
+                  <div>
+                    <h4 className="font-semibold mb-1">Idealizadora do Método FOCCO</h4>
+                    <p className="text-sm text-muted-foreground">Desenvolvimento Humano baseado em Mindfulness, Neurociência e Comportamento</p>
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <i className="fas fa-certificate text-primary"></i>
-                    <span>15+ anos</span>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <i className="fas fa-lotus text-primary text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Terapeuta Integrativa</h4>
+                    <p className="text-sm text-muted-foreground">Abordagem holística e científica</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <i className="fas fa-certificate text-primary text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Instrutora de Mindfulness</h4>
+                    <p className="text-sm text-muted-foreground">Formada pelo MTI (Mindfulness Trainings International)</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <i className="fas fa-graduation-cap text-primary text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Pós-Graduação em Neurociência</h4>
+                    <p className="text-sm text-muted-foreground">Neurociência e Comportamento pela PUC</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <i className="fas fa-user-md text-primary text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Analista Corporal e Comportamental</h4>
+                    <p className="text-sm text-muted-foreground">Especialista em padrões comportamentais</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <i className="fas fa-dna text-primary text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Reprogramação Biológica</h4>
+                    <p className="text-sm text-muted-foreground">Técnicas de reestruturação neural</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <i className="fas fa-book text-accent text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Autora do Livro</h4>
+                    <p className="text-sm text-muted-foreground">"De Bem Com a Dor"</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <i className="fas fa-microphone text-accent text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Palestrante</h4>
+                    <p className="text-sm text-muted-foreground">Desenvolvimento pessoal e corporativo</p>
                   </div>
                 </div>
               </div>

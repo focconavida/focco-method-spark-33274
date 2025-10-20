@@ -3,7 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const Servicos = () => {
-  const whatsappNumber = '558399387450';
+  const whatsappNumber = '5583993787450';
   const whatsappMessage = 'Olá, seja bem-vindo! Como posso te ajudar?';
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
   const servicos = [

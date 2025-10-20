@@ -8,12 +8,15 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   const [newsletterEmail, setNewsletterEmail] = useState('');
 
-  const whatsappNumber = '558399387450';
+  const whatsappNumber = '5583993787450';
   const whatsappMessage = 'Olá! Gostaria de receber atualizações do Método FOCCO.';
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   const socialLinks = [
-    { icon: 'fa-instagram', url: 'https://instagram.com/metodofocco', label: 'Instagram' },
+    { icon: 'fa-instagram', url: 'https://www.instagram.com/focconavida/', label: 'Instagram' },
+    { icon: 'fa-facebook', url: 'https://www.facebook.com/profile.php?id=100063709680264', label: 'Facebook' },
+    { icon: 'fa-youtube', url: 'https://www.youtube.com/@focconavida2012', label: 'YouTube' },
+    { icon: 'fa-linkedin', url: 'https://www.linkedin.com/in/val%C3%A9ria-dias-a80877293/', label: 'LinkedIn' },
     { icon: 'fa-whatsapp', url: whatsappLink, label: 'WhatsApp' },
   ];
 
@@ -77,7 +80,7 @@ const Footer = () => {
               <li className="flex items-start gap-3 text-sm">
                 <i className="fab fa-whatsapp text-accent mt-1"></i>
                 <a
-                  href="https://wa.me/558399387450"
+                  href="https://wa.me/5583993787450"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-primary-foreground/80 hover:text-accent transition-colors"

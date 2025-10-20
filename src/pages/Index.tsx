@@ -6,24 +6,24 @@ import heroImage from '@/assets/hero-bg.jpg';
 import clarityImage from '@/assets/clarity-illustration.jpg';
 
 const Index = () => {
-  const whatsappNumber = '558399387450';
+  const whatsappNumber = '5583993787450';
   const whatsappMessage = 'Olá, seja bem-vindo! Como posso te ajudar?';
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
   const pilares = [
     {
-      icon: 'fa-bullseye',
-      title: 'Foco',
-      description: 'Clareza sobre suas prioridades e objetivos, eliminando distrações e desenvolvendo concentração profunda.',
+      icon: 'fa-lotus',
+      title: 'Mindfulness',
+      description: 'Prática cientificamente comprovada que desenvolve atenção plena, foco e autorregulação emocional para fortalecer a clareza mental e o equilíbrio.',
     },
     {
       icon: 'fa-brain',
-      title: 'Consciência',
-      description: 'Autoconhecimento profundo através da inteligência emocional e compreensão dos seus padrões mentais.',
+      title: 'Neurociência',
+      description: 'Compreensão do funcionamento cerebral para ampliar autoconhecimento, promover mudanças sustentáveis e desenvolver habilidades que impulsionam bem-estar e performance.',
     },
     {
-      icon: 'fa-rocket',
-      title: 'Transformação',
-      description: 'Mudança real e sustentável através de ações consistentes alinhadas ao seu propósito autêntico.',
+      icon: 'fa-user-cog',
+      title: 'Comportamento',
+      description: 'Trabalho consciente e estratégico de padrões mentais e emocionais para transformar hábitos, aprimorar relações e gerar resultados equilibrados.',
     },
   ];
 
