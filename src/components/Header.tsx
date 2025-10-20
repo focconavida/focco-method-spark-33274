@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import logoFocco from '@/assets/logo-focco-small.png';
+import logoFocco from '@/assets/logo-horizontal-transparent.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,10 +35,13 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <img 
-              src={logoFocco} 
-              alt="FOCCO Mindfulness" 
-              className="h-16 md:h-20 w-auto transition-all duration-300 group-hover:scale-105 rounded-lg"
+            <img
+              src={logoFocco}
+              alt="FOCCO Mindfulness"
+              className="h-12 md:h-14 w-auto transition-all duration-300 group-hover:scale-105"
+              style={{
+                filter: 'brightness(0) saturate(100%) invert(24%) sepia(69%) saturate(1859%) hue-rotate(175deg) brightness(95%) contrast(90%)'
+              }}
             />
           </Link>
 
