@@ -99,6 +99,11 @@
     @apply border-border;
   }
   
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 180px; /* Altura do header fixo + margem */
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: 'Open Sans', sans-serif;
@@ -166,6 +171,7 @@
   /* Section Styles */
   .section-padding {
     @apply py-20 md:py-32 px-4;
+    scroll-margin-top: 180px; /* Compensa o header fixo */
   }
   
   .container-custom {
