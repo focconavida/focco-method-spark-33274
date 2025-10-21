@@ -101,7 +101,7 @@
   
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 220px; /* Altura do header fixo + margem */
+    scroll-padding-top: 200px; /* Altura do header fixo + margem */
   }
 
   body {
@@ -171,7 +171,7 @@
   /* Section Styles */
   .section-padding {
     @apply py-20 md:py-32 px-4;
-    scroll-margin-top: 220px; /* Compensa o header fixo */
+    scroll-margin-top: 200px; /* Compensa o header fixo */
   }
   
   .container-custom {

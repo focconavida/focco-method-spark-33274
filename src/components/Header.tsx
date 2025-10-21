@@ -31,7 +31,7 @@ const Header = () => {
         isScrolled ? 'bg-background shadow-md' : 'bg-background/95 backdrop-blur-sm'
       }`}
     >
-      <nav className="container-custom py-3 md:py-4">
+      <nav className="container-custom py-1 md:py-2">
         <div className="flex items-center justify-between px-4 md:px-0">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
