@@ -74,7 +74,7 @@ const Index = () => {
 
       {/* Hero Section */}
       <section
-        className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden pt-28 md:pt-32"
+        className="relative h-[90vh] min-h-[600px] flex items-center justify-center overflow-hidden pt-32 md:pt-40"
         style={{
           backgroundImage: `linear-gradient(135deg, rgba(44, 95, 111, 0.85), rgba(58, 122, 142, 0.75)), url(${heroImage})`,
           backgroundSize: 'cover',
