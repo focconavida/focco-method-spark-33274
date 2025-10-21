@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { Button } from '@/components/ui/button';
 import valeriaProfile from '@/assets/valeria-profile.jpg';
 import valeriaFoto from '@/assets/valeria-foto.png';
 
@@ -328,10 +329,10 @@ const Sobre = () => {
               Descubra como o Método FOCCO pode ajudar você a alcançar clareza, propósito e realização.
             </p>
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="block mt-8">
-              <button className="bg-accent hover:bg-accent-light text-accent-foreground text-lg px-12 py-6 rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all hover:scale-105">
+              <Button className="bg-accent hover:bg-accent-light text-accent-foreground text-lg px-12 py-6 rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all hover:scale-105">
                 <i className="fab fa-whatsapp mr-3"></i>
                 Falar no WhatsApp
-              </button>
+              </Button>
             </a>
           </div>
         </div>
