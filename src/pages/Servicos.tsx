@@ -282,14 +282,14 @@ const Servicos = () => {
       {/* CTA Final */}
       <section className="section-padding bg-primary text-primary-foreground">
         <div className="container-custom text-center">
-          <div className="max-w-3xl mx-auto space-y-8">
+          <div className="max-w-3xl mx-auto space-y-6">
             <h2 className="font-heading text-primary-foreground">
               Não sabe qual serviço escolher?
             </h2>
             <p className="text-xl text-primary-foreground/90 leading-relaxed">
               Fale conosco no WhatsApp e vamos encontrar juntos a melhor solução para sua jornada.
             </p>
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="block mt-8">
               <Button className="bg-accent hover:bg-accent-light text-accent-foreground text-lg px-12 py-6 rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all hover:scale-105">
                 <i className="fab fa-whatsapp mr-3"></i>
                 Falar no WhatsApp
