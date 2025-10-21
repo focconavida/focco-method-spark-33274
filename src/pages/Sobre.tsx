@@ -67,8 +67,8 @@ const Sobre = () => {
       {/* História Section */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+          <div className="grid md:grid-cols-5 gap-8 items-start">
+            <div className="md:col-span-3 space-y-6">
               <h2 className="font-heading">Nossa História</h2>
               <p className="text-muted-foreground leading-relaxed">
                 O Método FOCCO nasceu da observação de que muitas pessoas talentosas e dedicadas vivem vidas que não refletem seu verdadeiro potencial. Apesar de conquistas externas, sentem-se perdidas, desconectadas de seu propósito e sobrecarregadas emocionalmente.
@@ -80,7 +80,7 @@ const Sobre = () => {
                 Hoje, já ajudamos centenas de pessoas a encontrarem clareza, propósito e equilíbrio - tanto na vida pessoal quanto profissional.
               </p>
             </div>
-            <div className="relative">
+            <div className="md:col-span-2 relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl transform rotate-3"></div>
               <img
                 src={valeriaFoto}
