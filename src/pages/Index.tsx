@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import GoogleReviews from '@/components/GoogleReviews';
 import heroImage from '@/assets/hero-bg.jpg';
-import diagramaFocco from '@/assets/diagrama-focco.png';
+import beneficiosImage from '@/assets/beneficios-focco.jpg';
 
 const Index = () => {
   const whatsappNumber = '5583993787450';
@@ -192,8 +192,8 @@ const Index = () => {
             </div>
             <div className="relative">
               <img
-                src={diagramaFocco}
-                alt="Diagrama do Método FOCCO"
+                src={beneficiosImage}
+                alt="Benefícios do Método FOCCO"
                 className="rounded-2xl shadow-xl"
               />
             </div>
