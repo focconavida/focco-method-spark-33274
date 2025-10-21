@@ -281,6 +281,36 @@ const Sobre = () => {
                     <p className="text-sm text-muted-foreground">Desenvolvimento pessoal e corporativo</p>
                   </div>
                 </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <i className="fas fa-briefcase text-primary text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Administradora de Empresa</h4>
+                    <p className="text-sm text-muted-foreground">Experiência em gestão empresarial</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <i className="fas fa-heart-pulse text-success text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Criadora do Programa</h4>
+                    <p className="text-sm text-muted-foreground">De Bem Com a Vida - Autorregulação Emocional</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <i className="fas fa-certificate text-primary text-xl"></i>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Implementadora do NR1</h4>
+                    <p className="text-sm text-muted-foreground">Certificada pelo MEC</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
