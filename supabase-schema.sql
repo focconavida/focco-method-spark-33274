@@ -32,10 +32,16 @@ CREATE POLICY "Allow public read access to published posts"
   FOR SELECT
   USING (is_published = true);
 
--- Create policy to allow authenticated users to insert/update/delete
+-- Create policy to allow authenticated users to manage all posts
 CREATE POLICY "Allow authenticated users to manage posts"
   ON blog_posts
   FOR ALL
+  USING (auth.role() = 'authenticated');
+
+-- Create policy to allow authenticated users to read all posts (including drafts)
+CREATE POLICY "Allow authenticated users to read all posts"
+  ON blog_posts
+  FOR SELECT
   USING (auth.role() = 'authenticated');
 
 -- Create updated_at trigger
@@ -172,3 +178,41 @@ Investir em autoconhecimento é investir em seu futuro profissional. O Método F
   ARRAY['autoconhecimento', 'carreira', 'desenvolvimento profissional'],
   7
 );
+
+-- ========================================
+-- STORAGE CONFIGURATION
+-- ========================================
+
+-- Create storage bucket for blog assets
+INSERT INTO storage.buckets (id, name, public)
+VALUES ('blog-assets', 'blog-assets', true)
+ON CONFLICT (id) DO NOTHING;
+
+-- Create storage policy to allow public read access
+CREATE POLICY "Allow public read access to blog assets"
+  ON storage.objects FOR SELECT
+  USING (bucket_id = 'blog-assets');
+
+-- Create storage policy to allow authenticated users to upload
+CREATE POLICY "Allow authenticated users to upload blog assets"
+  ON storage.objects FOR INSERT
+  WITH CHECK (
+    bucket_id = 'blog-assets' AND
+    auth.role() = 'authenticated'
+  );
+
+-- Create storage policy to allow authenticated users to update
+CREATE POLICY "Allow authenticated users to update blog assets"
+  ON storage.objects FOR UPDATE
+  USING (
+    bucket_id = 'blog-assets' AND
+    auth.role() = 'authenticated'
+  );
+
+-- Create storage policy to allow authenticated users to delete
+CREATE POLICY "Allow authenticated users to delete blog assets"
+  ON storage.objects FOR DELETE
+  USING (
+    bucket_id = 'blog-assets' AND
+    auth.role() = 'authenticated'
+  );

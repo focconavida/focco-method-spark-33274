@@ -9,6 +9,10 @@ import Servicos from "./pages/Servicos";
 import Contato from "./pages/Contato";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import DashboardPosts from "./pages/DashboardPosts";
+import DashboardPostForm from "./pages/DashboardPostForm";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +30,14 @@ const App = () => (
           <Route path="/contato" element={<Contato />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+
+          {/* Dashboard Routes */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard/posts" element={<DashboardPosts />} />
+          <Route path="/dashboard/posts/new" element={<DashboardPostForm />} />
+          <Route path="/dashboard/posts/:postId/edit" element={<DashboardPostForm />} />
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
