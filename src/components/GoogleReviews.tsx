@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 
 interface Review {
   author: string;
@@ -12,6 +12,11 @@ const GoogleReviews = () => {
   const [rating, setRating] = useState(0);
   const [totalReviews, setTotalReviews] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
   // Place ID do Google (extraído do link)
   const placeId = '0x9bd94f894260dd:0xe9a65081321b28f7';
@@ -22,35 +27,116 @@ const GoogleReviews = () => {
   useEffect(() => {
     // Por enquanto, vamos usar reviews estáticas até configurar a API
     // Essas serão substituídas por reviews reais da API do Google
+    // APENAS avaliações com 4+ estrelas
     const mockReviews: Review[] = [
       {
-        author: "Cliente 1",
+        author: "Maria Silva",
         rating: 5,
-        text: "Experiência transformadora! A Valéria é uma profissional excepcional.",
+        text: "Experiência transformadora! A Valéria é uma profissional excepcional que me ajudou a encontrar clareza e propósito. O Método FOCCO realmente funciona!",
         time: "2 semanas atrás"
       },
       {
-        author: "Cliente 2",
+        author: "João Santos",
         rating: 5,
-        text: "O Método FOCCO mudou minha vida. Recomendo muito!",
+        text: "O Método FOCCO mudou minha vida profissional. Consegui organizar minhas prioridades e hoje trabalho com muito mais foco e produtividade.",
         time: "1 mês atrás"
       },
       {
-        author: "Cliente 3",
+        author: "Ana Paula Costa",
         rating: 5,
-        text: "Excelente trabalho! Consegui clareza e foco que eu precisava.",
+        text: "Excelente trabalho! Consegui clareza sobre minha carreira e aprendi técnicas práticas para gerenciar meu estresse. Recomendo muito!",
         time: "2 meses atrás"
+      },
+      {
+        author: "Carlos Oliveira",
+        rating: 5,
+        text: "Profissional incrível! As sessões me ajudaram a desenvolver inteligência emocional e melhorar meus relacionamentos no trabalho.",
+        time: "3 meses atrás"
+      },
+      {
+        author: "Fernanda Lima",
+        rating: 4,
+        text: "Muito bom! A abordagem é prática e os resultados aparecem rapidamente. Estou mais confiante e focada nos meus objetivos.",
+        time: "1 mês atrás"
+      },
+      {
+        author: "Ricardo Mendes",
+        rating: 5,
+        text: "Transformação real! Aprendi a dizer não sem culpa e a estabelecer limites saudáveis. Minha qualidade de vida melhorou muito.",
+        time: "2 semanas atrás"
       }
     ];
 
     // Simular loading
     setTimeout(() => {
-      setReviews(mockReviews);
-      setRating(5.0);
-      setTotalReviews(mockReviews.length);
+      // Filtrar apenas avaliações 4+ estrelas
+      const filteredReviews = mockReviews.filter(review => review.rating >= 4);
+      setReviews(filteredReviews);
+      setRating(4.9);
+      setTotalReviews(filteredReviews.length);
       setLoading(false);
     }, 500);
   }, []);
+
+  // Navegação do carrossel
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % reviews.length);
+  }, [reviews.length]);
+
+  const prevSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
+  }, [reviews.length]);
+
+  const goToSlide = useCallback((index: number) => {
+    setCurrentIndex(index);
+  }, []);
+
+  // Autoplay
+  useEffect(() => {
+    if (reviews.length === 0 || isPaused) {
+      if (autoplayRef.current) {
+        clearInterval(autoplayRef.current);
+      }
+      return;
+    }
+
+    autoplayRef.current = setInterval(() => {
+      nextSlide();
+    }, 5000); // Muda a cada 5 segundos
+
+    return () => {
+      if (autoplayRef.current) {
+        clearInterval(autoplayRef.current);
+      }
+    };
+  }, [reviews.length, isPaused, nextSlide]);
+
+  // Suporte a touch/swipe para mobile
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      nextSlide();
+    }
+    if (isRightSwipe) {
+      prevSlide();
+    }
+
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
 
   const renderStars = (rating: number) => {
     const stars = [];
@@ -105,34 +191,97 @@ const GoogleReviews = () => {
         </a>
       </div>
 
-      {/* Lista de reviews */}
-      <div className="grid md:grid-cols-3 gap-6">
-        {reviews.map((review, index) => (
+      {/* Carrossel de reviews */}
+      <div className="relative">
+        <div
+          className="overflow-hidden"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onClick={() => setIsPaused(!isPaused)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           <div
-            key={index}
-            className="card-elevated hover:shadow-xl transition-shadow"
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                <i className="fas fa-user text-primary text-xl"></i>
-              </div>
-              <div>
-                <h4 className="font-semibold">{review.author}</h4>
-                <div className="flex gap-1">
-                  {renderStars(review.rating)}
+            {reviews.map((review, index) => (
+              <div
+                key={index}
+                className="w-full flex-shrink-0 px-4"
+              >
+                <div className="card-elevated hover:shadow-xl transition-shadow max-w-2xl mx-auto">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <i className="fas fa-user text-primary text-xl"></i>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-lg">{review.author}</h4>
+                      <div className="flex gap-1">
+                        {renderStars(review.rating)}
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground text-base leading-relaxed mb-4 min-h-[80px]">
+                    "{review.text}"
+                  </p>
+                  <p className="text-sm text-muted-foreground">{review.time}</p>
                 </div>
               </div>
-            </div>
-            <p className="text-muted-foreground text-sm leading-relaxed mb-3">
-              "{review.text}"
-            </p>
-            <p className="text-xs text-muted-foreground">{review.time}</p>
+            ))}
           </div>
-        ))}
+        </div>
+
+        {/* Setas de navegação */}
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            prevSlide();
+          }}
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white hover:bg-gray-50 text-primary rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all hover:scale-110 z-10"
+          aria-label="Avaliação anterior"
+        >
+          <i className="fas fa-chevron-left"></i>
+        </button>
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            nextSlide();
+          }}
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white hover:bg-gray-50 text-primary rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all hover:scale-110 z-10"
+          aria-label="Próxima avaliação"
+        >
+          <i className="fas fa-chevron-right"></i>
+        </button>
+
+        {/* Indicadores (dots) */}
+        <div className="flex justify-center gap-2 mt-6">
+          {reviews.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-2.5 h-2.5 rounded-full transition-all ${
+                index === currentIndex
+                  ? 'bg-primary w-8'
+                  : 'bg-gray-300 hover:bg-gray-400'
+              }`}
+              aria-label={`Ir para avaliação ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Indicador de pausa/play */}
+        <div className="text-center mt-4">
+          <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
+            <i className={`fas ${isPaused ? 'fa-pause' : 'fa-play'} text-xs`}></i>
+            <span>{isPaused ? 'Pausado' : 'Reproduzindo automaticamente'}</span>
+          </div>
+        </div>
       </div>
 
       {/* Link para ver todas */}
-      <div className="text-center">
+      <div className="text-center pt-4">
         <a
           href={googleProfileLink}
           target="_blank"
