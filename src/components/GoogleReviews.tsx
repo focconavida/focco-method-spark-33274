@@ -16,6 +16,7 @@ const GoogleReviews = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
+  const [itemsPerView, setItemsPerView] = useState(3); // 3 colunas no desktop
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
   // Place ID do Google (extraído do link)
@@ -78,18 +79,38 @@ const GoogleReviews = () => {
     }, 500);
   }, []);
 
+  // Detectar tamanho da tela e ajustar itens por visualização
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setItemsPerView(1); // Mobile: 1 coluna
+      } else if (window.innerWidth < 1024) {
+        setItemsPerView(2); // Tablet: 2 colunas
+      } else {
+        setItemsPerView(3); // Desktop: 3 colunas
+      }
+    };
+
+    handleResize(); // Executar na montagem
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Calcular número máximo de slides baseado no itemsPerView
+  const maxIndex = Math.max(0, reviews.length - itemsPerView);
+
   // Navegação do carrossel
   const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % reviews.length);
-  }, [reviews.length]);
+    setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
+  }, [maxIndex]);
 
   const prevSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev - 1 + reviews.length) % reviews.length);
-  }, [reviews.length]);
+    setCurrentIndex((prev) => Math.max(prev - 1, 0));
+  }, []);
 
   const goToSlide = useCallback((index: number) => {
-    setCurrentIndex(index);
-  }, []);
+    setCurrentIndex(Math.min(index, maxIndex));
+  }, [maxIndex]);
 
   // Autoplay
   useEffect(() => {
@@ -192,7 +213,7 @@ const GoogleReviews = () => {
       </div>
 
       {/* Carrossel de reviews */}
-      <div className="relative">
+      <div className="relative px-12">
         <div
           className="overflow-hidden"
           onMouseEnter={() => setIsPaused(true)}
@@ -203,30 +224,33 @@ const GoogleReviews = () => {
           onTouchEnd={handleTouchEnd}
         >
           <div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            className="flex transition-transform duration-500 ease-in-out gap-4"
+            style={{
+              transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
+            }}
           >
             {reviews.map((review, index) => (
               <div
                 key={index}
-                className="w-full flex-shrink-0 px-4"
+                className="flex-shrink-0 px-2"
+                style={{ width: `calc(${100 / itemsPerView}% - 1rem)` }}
               >
-                <div className="card-elevated hover:shadow-xl transition-shadow max-w-2xl mx-auto">
+                <div className="card-elevated hover:shadow-xl transition-shadow h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <i className="fas fa-user text-primary text-xl"></i>
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <i className="fas fa-user text-primary text-lg"></i>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-lg">{review.author}</h4>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-semibold text-base truncate">{review.author}</h4>
                       <div className="flex gap-1">
                         {renderStars(review.rating)}
                       </div>
                     </div>
                   </div>
-                  <p className="text-muted-foreground text-base leading-relaxed mb-4 min-h-[80px]">
+                  <p className="text-muted-foreground text-sm leading-relaxed mb-4 min-h-[100px]">
                     "{review.text}"
                   </p>
-                  <p className="text-sm text-muted-foreground">{review.time}</p>
+                  <p className="text-xs text-muted-foreground">{review.time}</p>
                 </div>
               </div>
             ))}
@@ -234,30 +258,34 @@ const GoogleReviews = () => {
         </div>
 
         {/* Setas de navegação */}
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            prevSlide();
-          }}
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white hover:bg-gray-50 text-primary rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all hover:scale-110 z-10"
-          aria-label="Avaliação anterior"
-        >
-          <i className="fas fa-chevron-left"></i>
-        </button>
-        <button
-          onClick={(e) => {
-            e.stopPropagation();
-            nextSlide();
-          }}
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white hover:bg-gray-50 text-primary rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all hover:scale-110 z-10"
-          aria-label="Próxima avaliação"
-        >
-          <i className="fas fa-chevron-right"></i>
-        </button>
+        {currentIndex > 0 && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              prevSlide();
+            }}
+            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-50 text-primary rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center shadow-lg transition-all hover:scale-110 z-10"
+            aria-label="Avaliações anteriores"
+          >
+            <i className="fas fa-chevron-left"></i>
+          </button>
+        )}
+        {currentIndex < maxIndex && (
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              nextSlide();
+            }}
+            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-50 text-primary rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center shadow-lg transition-all hover:scale-110 z-10"
+            aria-label="Próximas avaliações"
+          >
+            <i className="fas fa-chevron-right"></i>
+          </button>
+        )}
 
         {/* Indicadores (dots) */}
         <div className="flex justify-center gap-2 mt-6">
-          {reviews.map((_, index) => (
+          {Array.from({ length: maxIndex + 1 }).map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
@@ -266,7 +294,7 @@ const GoogleReviews = () => {
                   ? 'bg-primary w-8'
                   : 'bg-gray-300 hover:bg-gray-400'
               }`}
-              aria-label={`Ir para avaliação ${index + 1}`}
+              aria-label={`Ir para grupo ${index + 1}`}
             />
           ))}
         </div>
