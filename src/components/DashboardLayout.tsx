@@ -41,6 +41,11 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       label: 'Novo Post',
       path: '/dashboard/posts/new',
     },
+    {
+      icon: User,
+      label: 'Perfil do Autor',
+      path: '/dashboard/perfil',
+    },
   ];
 
   const isActive = (path: string) => location.pathname === path;

@@ -13,6 +13,7 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import DashboardPosts from "./pages/DashboardPosts";
 import DashboardPostForm from "./pages/DashboardPostForm";
+import DashboardAuthorProfile from "./pages/DashboardAuthorProfile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/dashboard/posts" element={<DashboardPosts />} />
           <Route path="/dashboard/posts/new" element={<DashboardPostForm />} />
           <Route path="/dashboard/posts/:postId/edit" element={<DashboardPostForm />} />
+          <Route path="/dashboard/perfil" element={<DashboardAuthorProfile />} />
 
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
