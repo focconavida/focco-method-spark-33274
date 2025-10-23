@@ -85,7 +85,7 @@ const BlogPost = () => {
       <Header />
 
       {/* Back Button */}
-      <div className="pt-28 pb-4 px-4">
+      <div className="pt-40 md:pt-44 pb-4 px-4">
         <div className="max-w-4xl mx-auto">
           <Link
             to="/blog"
