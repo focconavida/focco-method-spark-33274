@@ -143,7 +143,7 @@ const Dashboard = () => {
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-2">
-                        <h3 className="font-semibold text-gray-900 truncate">{post.title}</h3>
+                        <h3 className="font-semibold text-sm text-gray-900 truncate leading-tight">{post.title}</h3>
                         {post.is_published ? (
                           <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
                             Publicado
@@ -154,7 +154,7 @@ const Dashboard = () => {
                           </span>
                         )}
                       </div>
-                      <p className="text-sm text-gray-600 line-clamp-1 mb-2">{post.excerpt}</p>
+                      <p className="text-xs text-gray-600 line-clamp-1 mb-2">{post.excerpt}</p>
                       <div className="flex items-center gap-4 text-xs text-gray-500">
                         <span className="flex items-center gap-1">
                           <Clock className="h-3 w-3" />
