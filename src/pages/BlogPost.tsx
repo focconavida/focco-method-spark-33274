@@ -130,7 +130,7 @@ const BlogPost = () => {
                 <img
                   src={post.author_avatar}
                   alt={post.author}
-                  className="w-12 h-12 rounded-full object-cover"
+                  className="w-12 h-12 rounded-full object-cover ring-2 ring-[#8B5CF6]/20"
                 />
               )}
               <div>

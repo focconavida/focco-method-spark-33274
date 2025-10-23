@@ -25,6 +25,7 @@ import {
 import { Switch } from '@/components/ui/switch';
 import { Loader2, Save, ArrowLeft, Upload, X, Eye } from 'lucide-react';
 import { toast } from 'sonner';
+import valeriaFoto from '@/assets/valeria-foto.png';
 
 const DashboardPostForm = () => {
   const { postId } = useParams();
@@ -145,6 +146,7 @@ const DashboardPostForm = () => {
       content,
       cover_image: coverImage || undefined,
       author: 'Valéria Dias',
+      author_avatar: valeriaFoto,
       category: category || undefined,
       tags: tagsArray.length > 0 ? tagsArray : undefined,
       is_published: isPublished,

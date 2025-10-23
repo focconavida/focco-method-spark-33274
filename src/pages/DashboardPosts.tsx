@@ -145,7 +145,7 @@ const DashboardPosts = () => {
                             />
                           )}
                           <div className="min-w-0">
-                            <h3 className="font-semibold text-gray-900 mb-1">{post.title}</h3>
+                            <h3 className="font-medium text-base text-gray-900 mb-1">{post.title}</h3>
                             <p className="text-sm text-gray-600 line-clamp-1 mb-1">
                               {post.excerpt}
                             </p>
