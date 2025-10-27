@@ -172,28 +172,33 @@ const Sobre = () => {
             <h2 className="font-heading text-center mb-4">Quem Sou</h2>
             <h3 className="text-2xl text-center text-primary font-semibold mb-12">Valéria Dias</h3>
 
-            <div className="grid md:grid-cols-5 gap-8 items-start mb-12">
-              <div className="md:col-span-2 max-w-sm mx-auto">
-                <img
-                  src={valeriaProfile}
-                  alt="Valéria Dias - Idealizadora do Método FOCCO"
-                  className="rounded-2xl shadow-lg w-full"
-                />
+            <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
+              <div className="relative order-2 md:order-1">
+                <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 via-accent/20 to-primary/20 rounded-3xl blur-xl opacity-50"></div>
+                <div className="relative bg-white rounded-3xl p-2 shadow-2xl">
+                  <img
+                    src="/assets/quem-sou.jpg"
+                    alt="Valéria Dias - Idealizadora do Método FOCCO"
+                    className="rounded-2xl w-full object-cover"
+                  />
+                </div>
               </div>
-              <div className="md:col-span-3 space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  A história de Valéria é sobre <strong>redescoberta e autotransformação</strong>. Depois de 12 anos lidando com dor crônica e um cansaço que parecia interminável, ela encontrou no mindfulness uma verdadeira luz no fim do túnel.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  "Através dessa prática, consegui melhorar minha qualidade de vida de um jeito que nunca imaginei possível", conta Valéria. O impacto foi tão profundo que ela decidiu ir além: se formou <strong>Instrutora de Mindfulness</strong>, tornou-se <strong>Analista Comportamental</strong> e se especializou em <strong>Neurociência e Comportamento</strong>, se tornando terapeuta integrativa.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Hoje, sua missão é ajudar pessoas a descobrirem os mesmos benefícios que transformaram sua vida. Ela acredita que podemos treinar nossa mente para conseguirmos mais foco, através da observação, cultivando mais consciência e clareza para chegar nos nossos objetivos com saúde e bem-estar, encontrando paz em meio às adversidades.
-                </p>
-                <div className="bg-primary/5 rounded-lg p-4 border-l-4 border-primary">
-                  <p className="text-primary font-semibold text-lg">
-                    <i className="fas fa-users mr-2"></i>
-                    Mais de 1.000 pessoas impactadas pelo Método FOCCO
+              <div className="space-y-6 order-1 md:order-2">
+                <div className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed text-lg">
+                    A história de Valéria é sobre <strong className="text-primary">redescoberta e autotransformação</strong>. Depois de 12 anos lidando com dor crônica e um cansaço que parecia interminável, ela encontrou no mindfulness uma verdadeira luz no fim do túnel.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed text-lg">
+                    "Através dessa prática, consegui melhorar minha qualidade de vida de um jeito que nunca imaginei possível", conta Valéria. O impacto foi tão profundo que ela decidiu ir além: se formou <strong className="text-primary">Instrutora de Mindfulness</strong>, tornou-se <strong className="text-primary">Analista Comportamental</strong> e se especializou em <strong className="text-primary">Neurociência e Comportamento</strong>, se tornando terapeuta integrativa.
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed text-lg">
+                    Hoje, sua missão é ajudar pessoas a descobrirem os mesmos benefícios que transformaram sua vida. Ela acredita que podemos treinar nossa mente para conseguirmos mais foco, através da observação, cultivando mais consciência e clareza para chegar nos nossos objetivos com saúde e bem-estar, encontrando paz em meio às adversidades.
+                  </p>
+                </div>
+                <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-xl p-6 border-l-4 border-primary shadow-lg">
+                  <p className="text-primary font-bold text-xl flex items-center gap-3">
+                    <i className="fas fa-users text-2xl"></i>
+                    <span>Mais de 1.000 pessoas impactadas pelo Método FOCCO</span>
                   </p>
                 </div>
               </div>
