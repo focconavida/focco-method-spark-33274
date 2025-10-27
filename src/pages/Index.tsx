@@ -5,27 +5,56 @@ import Footer from '@/components/Footer';
 import GoogleReviews from '@/components/GoogleReviews';
 import heroImage from '@/assets/hero-bg.jpg';
 import beneficiosImage from '@/assets/beneficios-focco.jpg';
+import { useState } from 'react';
 
 const Index = () => {
   const whatsappNumber = '5583993787450';
   const whatsappMessage = 'Olá, seja bem-vindo! Como posso te ajudar?';
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-  const pilares = [
+
+  const [activeTab, setActiveTab] = useState(0);
+
+  const pilaresFocco = [
     {
-      icon: 'fa-om',
-      title: 'Mindfulness',
-      description: 'Prática cientificamente comprovada que desenvolve atenção plena, foco e autorregulação emocional para fortalecer a clareza mental e o equilíbrio.',
+      letter: 'F',
+      title: 'FOCO',
+      subtitle: 'Foco na sua vida',
+      description: 'Clareza sobre o que realmente importa. Desenvolva a capacidade de identificar e priorizar o que é essencial em sua vida pessoal e profissional, eliminando distrações e direcionando sua energia para seus verdadeiros objetivos.',
+      icon: 'fa-bullseye',
+      color: 'from-[#2C5F6F] to-[#3A7A8E]'
     },
     {
+      letter: 'O',
+      title: 'OBSERVAÇÃO',
+      subtitle: 'Atenção ao que importa',
+      description: 'Observação ao que é importante no seu processo de desenvolvimento pessoal e profissional. Cultive a habilidade de perceber padrões, comportamentos e oportunidades que impulsionam seu crescimento contínuo.',
+      icon: 'fa-eye',
+      color: 'from-[#3A7A8E] to-[#4A94A8]'
+    },
+    {
+      letter: 'C',
+      title: 'CONSCIÊNCIA',
+      subtitle: 'Decisões assertivas',
+      description: 'Consciência para melhor tomada de decisão. Aprenda a reconhecer seus pensamentos, emoções e reações, permitindo escolhas mais alinhadas com seus valores e objetivos de vida.',
       icon: 'fa-brain',
-      title: 'Neurociência',
-      description: 'Compreensão do funcionamento cerebral para ampliar autoconhecimento, promover mudanças sustentáveis e desenvolver habilidades que impulsionam bem-estar e performance.',
+      color: 'from-[#4A94A8] to-[#5AAEC2]'
     },
     {
-      icon: 'fa-user-cog',
-      title: 'Comportamento',
-      description: 'Trabalho consciente e estratégico de padrões mentais e emocionais para transformar hábitos, aprimorar relações e gerar resultados equilibrados.',
+      letter: 'C',
+      title: 'CLAREZA',
+      subtitle: 'Vida com qualidade',
+      description: 'Clareza para uma vida com qualidade, saúde e bem-estar. Elimine a confusão mental e emocional, conquistando tranquilidade, propósito e equilíbrio em todas as áreas da sua vida.',
+      icon: 'fa-lightbulb',
+      color: 'from-[#5AAEC2] to-[#6AC8DC]'
     },
+    {
+      letter: 'O',
+      title: 'OBJETIVO',
+      subtitle: 'Conquistas autênticas',
+      description: 'Objetivo: Sustentabilidade e autenticidade nas conquistas. Alcance seus objetivos de forma consistente e verdadeira, construindo resultados duradouros que refletem quem você realmente é.',
+      icon: 'fa-flag-checkered',
+      color: 'from-[#6AC8DC] to-[#7AE2F6]'
+    }
   ];
 
   const servicos = [
@@ -108,28 +137,107 @@ const Index = () => {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
       </section>
 
-      {/* Pilares Section */}
+      {/* Pilares FOCCO Section - Tabs Interativas */}
       <section className="section-padding bg-gradient-to-b from-background to-muted">
         <div className="container-custom">
           <div className="text-center mb-16 animate-slide-up">
-            <h2 className="font-heading mb-4">Os 3 Pilares do Método FOCCO</h2>
+            <h2 className="font-heading mb-4">Os 5 Pilares do Método FOCCO</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Uma abordagem integrada para transformação pessoal e profissional
+              FOCCO é um acrônimo que representa os cinco pilares fundamentais do método
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {pilares.map((pilar, index) => (
-              <div 
-                key={index} 
-                className="card-elevated text-center group"
-                style={{ animationDelay: `${index * 100}ms` }}
+
+          {/* Tabs Navigation */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {pilaresFocco.map((pilar, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveTab(index)}
+                className={`group relative px-6 py-4 rounded-xl font-semibold transition-all duration-300 ${
+                  activeTab === index
+                    ? 'bg-gradient-to-r ' + pilar.color + ' text-primary-foreground shadow-lg scale-105'
+                    : 'bg-card hover:bg-card/80 text-foreground hover:scale-105'
+                }`}
               >
-                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary transition-colors">
-                  <i className={`fas ${pilar.icon} text-4xl text-primary group-hover:text-primary-foreground transition-colors`}></i>
+                <div className="flex items-center gap-3">
+                  <span className={`text-3xl font-bold font-heading ${
+                    activeTab === index ? 'text-primary-foreground' : 'text-primary'
+                  }`}>
+                    {pilar.letter}
+                  </span>
+                  <div className="text-left hidden sm:block">
+                    <div className={`text-sm font-semibold ${
+                      activeTab === index ? 'text-primary-foreground' : 'text-foreground'
+                    }`}>
+                      {pilar.title}
+                    </div>
+                    <div className={`text-xs ${
+                      activeTab === index ? 'text-primary-foreground/80' : 'text-muted-foreground'
+                    }`}>
+                      {pilar.subtitle}
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-heading text-2xl mb-4 text-gradient">{pilar.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{pilar.description}</p>
+              </button>
+            ))}
+          </div>
+
+          {/* Tab Content */}
+          <div className="relative">
+            {pilaresFocco.map((pilar, index) => (
+              <div
+                key={index}
+                className={`transition-all duration-500 ${
+                  activeTab === index
+                    ? 'opacity-100 scale-100 relative'
+                    : 'opacity-0 scale-95 absolute inset-0 pointer-events-none'
+                }`}
+              >
+                <div className={`card-elevated p-8 md:p-12 bg-gradient-to-br ${pilar.color} text-primary-foreground`}>
+                  <div className="grid md:grid-cols-[auto,1fr] gap-8 items-center">
+                    {/* Ícone e Letra */}
+                    <div className="flex flex-col items-center">
+                      <div className="w-32 h-32 bg-primary-foreground/20 backdrop-blur-sm rounded-3xl flex items-center justify-center mb-4 shadow-xl">
+                        <i className={`fas ${pilar.icon} text-6xl text-primary-foreground`}></i>
+                      </div>
+                      <div className="text-7xl font-bold font-heading text-primary-foreground/30">
+                        {pilar.letter}
+                      </div>
+                    </div>
+
+                    {/* Conteúdo */}
+                    <div className="space-y-4 text-center md:text-left">
+                      <div>
+                        <h3 className="font-heading text-4xl md:text-5xl font-bold mb-2 text-primary-foreground">
+                          {pilar.title}
+                        </h3>
+                        <p className="text-xl text-primary-foreground/90 font-semibold">
+                          {pilar.subtitle}
+                        </p>
+                      </div>
+                      <p className="text-lg text-primary-foreground/95 leading-relaxed">
+                        {pilar.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
+            ))}
+          </div>
+
+          {/* Indicadores de Navegação */}
+          <div className="flex justify-center gap-2 mt-8">
+            {pilaresFocco.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveTab(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  activeTab === index
+                    ? 'w-8 bg-primary'
+                    : 'w-2 bg-primary/30 hover:bg-primary/50'
+                }`}
+                aria-label={`Ver pilar ${index + 1}`}
+              />
             ))}
           </div>
         </div>
