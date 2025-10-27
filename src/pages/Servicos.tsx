@@ -9,7 +9,7 @@ const Servicos = () => {
   const servicos = [
     {
       id: 'individual',
-      icon: 'fa-lotus',
+      icon: 'fa-om',
       title: 'Sessões Individuais de FOCCO',
       subtitle: 'Prática guiada de Mindfulness e autorregulação emocional',
       descricao: [
@@ -28,7 +28,6 @@ const Servicos = () => {
       detalhes: {
         duracao: '1h30 por sessão',
         frequencia: 'Semanal ou quinzenal',
-        investimento: 'A partir de R$ 500/sessão',
         paraQuem: 'Profissionais, empreendedores e líderes que buscam transformação profunda e resultados sustentáveis',
       },
     },
@@ -53,7 +52,6 @@ const Servicos = () => {
       detalhes: {
         duracao: '1h por sessão',
         frequencia: 'Programa de 8 a 12 sessões',
-        investimento: 'Sob consulta',
         paraQuem: 'Pessoas que desejam transformar padrões mentais e emocionais arraigados',
       },
     },
@@ -78,7 +76,6 @@ const Servicos = () => {
       detalhes: {
         duracao: 'Programa completo de 3 a 6 meses',
         frequencia: 'Sessões quinzenais',
-        investimento: 'Sob consulta (proposta customizada)',
         paraQuem: 'Pessoas comprometidas com transformação profunda e mudança de vida',
       },
     },
@@ -103,7 +100,6 @@ const Servicos = () => {
       detalhes: {
         duracao: 'Programas de 6 a 12 meses',
         frequencia: 'Encontros regulares (semanal ou quinzenal)',
-        investimento: 'Sob consulta (planos mensais ou pacotes)',
         paraQuem: 'Pessoas comprometidas com transformação profunda e que valorizam o processo gradual',
       },
     },
@@ -128,7 +124,6 @@ const Servicos = () => {
       detalhes: {
         duracao: 'Personalizado (3 a 12 meses)',
         frequencia: 'Definida conforme necessidade',
-        investimento: 'Sob consulta (proposta customizada)',
         paraQuem: 'Empresas comprometidas com desenvolvimento humano e que buscam alta performance sustentável',
       },
     },
@@ -192,7 +187,7 @@ const Servicos = () => {
                 </div>
               </div>
 
-              {/* Detalhes e Investimento */}
+              {/* Detalhes */}
               <div className="card-elevated bg-primary/5">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
@@ -210,13 +205,6 @@ const Servicos = () => {
                         <div>
                           <span className="font-semibold">Frequência: </span>
                           <span className="text-muted-foreground">{servico.detalhes.frequencia}</span>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-3">
-                        <i className="fas fa-dollar-sign text-primary mt-1"></i>
-                        <div>
-                          <span className="font-semibold">Investimento: </span>
-                          <span className="text-muted-foreground">{servico.detalhes.investimento}</span>
                         </div>
                       </div>
                     </div>

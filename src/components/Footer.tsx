@@ -119,10 +119,23 @@ const Footer = () => {
       <div className="border-t border-primary-foreground/20">
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-primary-foreground/60 text-sm">
-              © {currentYear} Método FOCCO. Todos os direitos reservados.
-            </p>
-            
+            <div className="text-center md:text-left">
+              <p className="text-primary-foreground/60 text-sm">
+                © {currentYear} Método FOCCO. Todos os direitos reservados.
+              </p>
+              <p className="text-primary-foreground/40 text-xs mt-1">
+                Desenvolvido por{' '}
+                <a
+                  href="https://digitalizarmkt.com.br/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-accent transition-colors underline"
+                >
+                  Digitalizar
+                </a>
+              </p>
+            </div>
+
             {/* Social Links */}
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => (

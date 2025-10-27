@@ -215,7 +215,7 @@ const Sobre = () => {
 
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <i className="fas fa-lotus text-primary text-xl"></i>
+                    <i className="fas fa-om text-primary text-xl"></i>
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Terapeuta Integrativa</h4>

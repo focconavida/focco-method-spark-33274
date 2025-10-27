@@ -12,7 +12,7 @@ const Index = () => {
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
   const pilares = [
     {
-      icon: 'fa-lotus',
+      icon: 'fa-om',
       title: 'Mindfulness',
       description: 'Prática cientificamente comprovada que desenvolve atenção plena, foco e autorregulação emocional para fortalecer a clareza mental e o equilíbrio.',
     },
@@ -30,7 +30,7 @@ const Index = () => {
 
   const servicos = [
     {
-      icon: 'fa-lotus',
+      icon: 'fa-om',
       title: 'Sessões de FOCCO',
       description: 'Prática guiada de mindfulness e autorregulação emocional para uma vida mais consciente.',
       duracao: 'Individual',
