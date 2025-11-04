@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Comercial - Google Ads Starter | Digitalizar</title>
+    <style>
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background-color: #ffffff;
+            font-size: 11pt;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+        }
+
+        /* HEADER COM LOGO */
+        .header {
+            background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
+            color: white;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-circle {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 24px;
+            color: #4F46E5;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .header-right {
+            text-align: right;
+        }
+
+        .header-right h1 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .header-right p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        /* INFO BAR */
+        .info-bar {
+            background: #F9FAFB;
+            padding: 25px 40px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            border-bottom: 3px solid #4F46E5;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-item strong {
+            display: block;
+            color: #4F46E5;
+            font-size: 0.85em;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .info-item span {
+            color: #1a1a1a;
+            font-size: 1em;
+            font-weight: 500;
+        }
+
+        .section {
+            padding: 30px 40px;
+        }
+
+        .section h2 {
+            color: #1a1a1a;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #4F46E5;
+            font-weight: 700;
+        }
+
+        .section h3 {
+            color: #1a1a1a;
+            font-size: 1.3em;
+            margin: 25px 0 15px;
+            font-weight: 600;
+        }
+
+        .section p {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        /* OBJETIVOS */
+        .objetivos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .objetivo-item {
+            background: #EEF2FF;
+            padding: 18px;
+            border-radius: 8px;
+            border-left: 4px solid #4F46E5;
+            font-size: 0.95em;
+            font-weight: 500;
+        }
+
+        .objetivo-item::before {
+            content: "✓";
+            color: #4F46E5;
+            font-weight: 700;
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        /* PACOTE BOX */
+        .package-box {
+            background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
+            color: white;
+            padding: 35px;
+            margin: 25px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.3);
+        }
+
+        .package-box h2 {
+            color: white;
+            border-bottom: 3px solid white;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .package-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .package-item-icon {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .package-item h4 {
+            color: white;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .package-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .package-item li {
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .package-item li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        /* TIMELINE */
+        .timeline {
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding: 15px 20px;
+            background: #F9FAFB;
+            border-radius: 8px;
+            border-left: 4px solid #4F46E5;
+        }
+
+        .timeline-item strong {
+            color: #1a1a1a;
+            font-size: 1em;
+            font-weight: 600;
+        }
+
+        .timeline-item span {
+            color: #6B7280;
+            font-size: 0.95em;
+        }
+
+        /* PRICE BOX */
+        .price-box {
+            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            margin: 25px 40px;
+            border-radius: 12px;
+        }
+
+        .price-box h2 {
+            color: white;
+            border: none;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .price-box .price {
+            font-size: 3em;
+            font-weight: 700;
+            color: #4F46E5;
+            margin: 20px 0;
+            text-shadow: 0 0 30px rgba(79, 70, 229, 0.5);
+        }
+
+        .price-box .installment {
+            font-size: 1.2em;
+            color: #D1D5DB;
+            margin-top: 10px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+            border: 2px solid #4F46E5;
+            padding: 25px;
+            margin: 20px 40px;
+            text-align: center;
+            border-radius: 12px;
+        }
+
+        .highlight-box p {
+            font-size: 1.4em;
+            color: #4F46E5;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        /* UPGRADE CARDS */
+        .upgrade-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .upgrade-card {
+            border: 2px solid #E5E7EB;
+            padding: 25px;
+            border-radius: 12px;
+            background: #FAFAFA;
+            transition: all 0.3s ease;
+        }
+
+        .upgrade-card:hover {
+            border-color: #4F46E5;
+            box-shadow: 0 5px 20px rgba(79, 70, 229, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .upgrade-card h4 {
+            color: #1a1a1a;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .upgrade-card .price {
+            color: #4F46E5;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin: 12px 0;
+        }
+
+        .upgrade-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .upgrade-card li {
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #4B5563;
+            font-size: 0.9em;
+        }
+
+        .upgrade-card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #4F46E5;
+            font-size: 1.3em;
+        }
+
+        /* GARANTIAS */
+        .guarantee-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .guarantee-item {
+            text-align: center;
+            padding: 20px;
+            background: #EEF2FF;
+            border-radius: 10px;
+            border: 2px solid #C7D2FE;
+        }
+
+        .guarantee-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .guarantee-item strong {
+            display: block;
+            color: #1a1a1a;
+            margin-top: 8px;
+            font-size: 1.05em;
+            font-weight: 600;
+        }
+
+        .guarantee-item p {
+            color: #4B5563;
+            margin-top: 6px;
+            font-size: 0.9em;
+        }
+
+        /* PIX BOX */
+        .pix-box {
+            background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #10B981;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .pix-box strong {
+            display: block;
+            font-size: 1.1em;
+            margin-bottom: 12px;
+            color: #065F46;
+        }
+
+        .pix-box .pix-key {
+            font-size: 1.5em;
+            color: #10B981;
+            font-weight: 700;
+            font-family: 'Courier New', monospace;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* FAQ */
+        .faq {
+            margin: 20px 0;
+        }
+
+        .faq-item {
+            background: #F9FAFB;
+            padding: 20px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #4F46E5;
+        }
+
+        .faq-item strong {
+            color: #1a1a1a;
+            font-size: 1em;
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .faq-item p {
+            color: #4B5563;
+            line-height: 1.7;
+            font-size: 0.95em;
+        }
+
+        /* RESULTS GRID */
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .result-item {
+            background: white;
+            padding: 20px;
+            border: 2px solid #E5E7EB;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .result-item::before {
+            content: "✓";
+            font-size: 2em;
+            display: block;
+            margin-bottom: 12px;
+            color: #4F46E5;
+            font-weight: 700;
+        }
+
+        .result-item p {
+            color: #1a1a1a;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
+            color: white;
+            padding: 45px;
+            text-align: center;
+            margin: 30px 40px 0 40px;
+            border-radius: 12px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            border: none;
+            margin-bottom: 15px;
+            font-size: 2em;
+        }
+
+        .cta-section p {
+            font-size: 1.2em;
+            margin: 15px 0;
+            opacity: 0.95;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #111827;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo-circle {
+            width: 40px;
+            height: 40px;
+            background: #4F46E5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            color: white;
+        }
+
+        .footer-logo-text {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .footer h3 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .footer p {
+            color: #D1D5DB;
+            margin: 8px 0;
+            font-size: 0.95em;
+        }
+
+        .footer a {
+            color: #4F46E5;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-note {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #374151;
+            color: #9CA3AF;
+            font-size: 0.85em;
+        }
+
+        .page-break {
+            page-break-before: always;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER COM LOGO -->
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-circle">D</div>
+                <div class="logo-text">Digitalizar</div>
+            </div>
+            <div class="header-right">
+                <h1>PROPOSTA COMERCIAL</h1>
+                <p>Google Ads Starter - Método FOCCO</p>
+            </div>
+        </div>
+
+        <!-- INFO BAR -->
+        <div class="info-bar">
+            <div class="info-item">
+                <strong>Cliente</strong>
+                <span>Valéria Dias</span>
+            </div>
+            <div class="info-item">
+                <strong>Projeto</strong>
+                <span>Método FOCCO</span>
+            </div>
+            <div class="info-item">
+                <strong>Data</strong>
+                <span>Outubro 2025</span>
+            </div>
+            <div class="info-item">
+                <strong>Validade</strong>
+                <span>15 dias</span>
+            </div>
+        </div>
+
+        <!-- SOBRE O PROJETO -->
+        <div class="section">
+            <h2>📊 Sobre o Projeto</h2>
+            <p>Preparação técnica e estratégica do site <strong>focconavida.com.br</strong> para campanhas de Google Ads, incluindo landing page otimizada, rastreamento de conversões, dashboard de métricas em tempo real e material didático completo para gestão autônoma das campanhas.</p>
+        </div>
+
+        <!-- OBJETIVOS -->
+        <div class="section">
+            <h2>🎯 Objetivo</h2>
+            <p style="margin-bottom: 20px;">Estruturar o site para captar leads qualificados através do Google Ads, com foco em:</p>
+            <div class="objetivos">
+                <div class="objetivo-item">Conversão de visitantes em agendamentos</div>
+                <div class="objetivo-item">Rastreamento preciso de resultados</div>
+                <div class="objetivo-item">ROI mensurável e transparente</div>
+                <div class="objetivo-item">Autonomia total para gerenciar campanhas</div>
+            </div>
+        </div>
+
+        <!-- PAGE BREAK -->
+        <div class="page-break"></div>
+
+        <!-- PACOTE STARTER -->
+        <div class="package-box">
+            <h2>📦 Pacote Starter - O que está incluído</h2>
+
+            <div class="package-grid">
+                <div class="package-item">
+                    <div class="package-item-icon">🎨</div>
+                    <h4>1. Landing Page de Conversão</h4>
+                    <ul>
+                        <li>Design responsivo profissional</li>
+                        <li>Formulário de captura otimizado</li>
+                        <li>Integração com WhatsApp</li>
+                        <li>Botões de CTA estratégicos</li>
+                        <li>Copy persuasiva</li>
+                        <li>Velocidade otimizada</li>
+                    </ul>
+                </div>
+
+                <div class="package-item">
+                    <div class="package-item-icon">📍</div>
+                    <h4>2. Pixels e Rastreamento</h4>
+                    <ul>
+                        <li>Pixel de Conversão Google Ads</li>
+                        <li>Eventos de rastreamento</li>
+                        <li>Integração Google Analytics 4</li>
+                        <li>Testes de funcionamento</li>
+                    </ul>
+                </div>
+
+                <div class="package-item">
+                    <div class="package-item-icon">📚</div>
+                    <h4>3. Guia Didático Completo</h4>
+                    <ul>
+                        <li>Manual PDF (15-20 páginas)</li>
+                        <li>Como criar conta Google Ads</li>
+                        <li>Configurar primeira campanha</li>
+                        <li>Palavras-chave sugeridas</li>
+                        <li>Definir orçamento</li>
+                        <li>Ler e interpretar métricas</li>
+                        <li>Checklist de otimização</li>
+                    </ul>
+                </div>
+
+                <div class="package-item">
+                    <div class="package-item-icon">🎯</div>
+                    <h4>4. Template de Campanha</h4>
+                    <ul>
+                        <li>Estrutura configurada</li>
+                        <li>Grupos de anúncios organizados</li>
+                        <li>3 anúncios prontos (teste A/B)</li>
+                        <li>Palavras-chave negativas</li>
+                        <li>Extensões configuradas</li>
+                    </ul>
+                </div>
+
+                <div class="package-item">
+                    <div class="package-item-icon">📊</div>
+                    <h4>5. Dashboard de Métricas</h4>
+                    <ul>
+                        <li>Painel personalizado no site</li>
+                        <li>Visitantes e conversões</li>
+                        <li>Origem do tráfego</li>
+                        <li>Métricas: CPC, ROI, conversão</li>
+                        <li>Gráficos em tempo real</li>
+                        <li>Acesso protegido por senha</li>
+                    </ul>
+                </div>
+
+                <div class="package-item">
+                    <div class="package-item-icon">✅</div>
+                    <h4>6. Checklist de Otimização</h4>
+                    <ul>
+                        <li>Planilha de acompanhamento</li>
+                        <li>KPIs para monitorar</li>
+                        <li>Metas de conversão</li>
+                        <li>Quando e como otimizar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- CRONOGRAMA -->
+        <div class="section">
+            <h2>⏱️ Cronograma de Entrega</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>Landing page criada</strong>
+                    <span>31/10/2025 (sexta)</span>
+                </div>
+                <div class="timeline-item">
+                    <strong>Pixels instalados</strong>
+                    <span>01/11/2025 (sábado)</span>
+                </div>
+                <div class="timeline-item">
+                    <strong>Guia PDF finalizado</strong>
+                    <span>02/11/2025 (domingo)</span>
+                </div>
+                <div class="timeline-item">
+                    <strong>Template + Dashboard</strong>
+                    <span>03/11/2025 (domingo)</span>
+                </div>
+                <div class="timeline-item">
+                    <strong>Revisão final</strong>
+                    <span>04/11/2025 (segunda)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <p>⚡ Entrega Express: 04/11/2025 (segunda-feira)</p>
+        </div>
+
+        <!-- PAGE BREAK -->
+        <div class="page-break"></div>
+
+        <!-- INVESTIMENTO -->
+        <div class="price-box">
+            <h2>💰 Investimento</h2>
+            <p class="installment">Pacote Starter</p>
+            <p style="text-decoration: line-through; color: #9CA3AF; font-size: 1.5em; margin-top: 10px;">De R$ 800,00</p>
+            <div style="background: #10B981; color: white; display: inline-block; padding: 8px 20px; border-radius: 20px; font-size: 1em; font-weight: 700; margin: 10px 0;">
+                DESCONTO DE R$ 300,00 (37% OFF)
+            </div>
+            <div class="price">R$ 500,00</div>
+            <p class="installment">50% entrada + 50% na entrega</p>
+            <p style="font-size: 0.9em; color: #D1D5DB; margin-top: 15px; font-style: italic;">
+                Oferta especial de lançamento - Válida por tempo limitado
+            </p>
+        </div>
+
+        <!-- CONDIÇÕES -->
+        <div class="section">
+            <h2>🤝 Condições Comerciais</h2>
+
+            <h3>Forma de Pagamento</h3>
+            <div class="pix-box">
+                <strong>Apenas PIX</strong>
+                <div class="pix-key">saadneto@icloud.com</div>
+            </div>
+
+            <h3>Parcelamento</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>50% (R$ 250,00)</strong>
+                    <span>Na aprovação da proposta</span>
+                </div>
+                <div class="timeline-item">
+                    <strong>50% (R$ 250,00)</strong>
+                    <span>Na entrega final (04/11/2025)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- UPGRADES -->
+        <div class="section">
+            <h2>🎁 Upgrades Opcionais</h2>
+            <p style="margin-bottom: 25px;">Quer potencializar ainda mais seus resultados? Adicione:</p>
+
+            <div class="upgrade-grid">
+                <div class="upgrade-card">
+                    <h4>➕ 3 Landing Pages Extras (Teste A/B)</h4>
+                    <div class="price">+ R$ 400,00</div>
+                    <ul>
+                        <li>Total de 4 páginas diferentes</li>
+                        <li>Teste A/B para descobrir qual converte mais</li>
+                        <li>Diferentes abordagens e CTAs</li>
+                        <li>Exemplo: E-book / Sessão Grátis / Desconto</li>
+                        <li>Aumenta conversão em até 300%</li>
+                        <li>Dados reais para otimização</li>
+                    </ul>
+                </div>
+
+                <div class="upgrade-card">
+                    <h4>➕ Suporte 30 Dias</h4>
+                    <div class="price">+ R$ 500,00</div>
+                    <ul>
+                        <li>Suporte via WhatsApp</li>
+                        <li>Análise semanal de resultados</li>
+                        <li>Otimização em tempo real</li>
+                        <li>1 consultoria ao vivo (1h)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- GARANTIAS -->
+        <div class="section">
+            <h2>✅ Garantias</h2>
+            <div class="guarantee-grid">
+                <div class="guarantee-item">
+                    <div class="guarantee-icon">🎯</div>
+                    <strong>Satisfação</strong>
+                    <p>Ajustes ilimitados durante 15 dias</p>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-icon">💬</div>
+                    <strong>Suporte</strong>
+                    <p>7 dias de suporte técnico gratuito</p>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-icon">⭐</div>
+                    <strong>Qualidade</strong>
+                    <p>Padrão profissional de mercado</p>
+                </div>
+                <div class="guarantee-item">
+                    <div class="guarantee-icon">📖</div>
+                    <strong>Didático</strong>
+                    <p>Linguagem clara e acessível</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE BREAK -->
+        <div class="page-break"></div>
+
+        <!-- FAQ -->
+        <div class="section">
+            <h2>💬 Dúvidas Frequentes</h2>
+            <div class="faq">
+                <div class="faq-item">
+                    <strong>Preciso ter experiência com Google Ads?</strong>
+                    <p>Não! O guia foi feito para iniciantes. Explicamos tudo passo a passo com linguagem simples e exemplos práticos.</p>
+                </div>
+                <div class="faq-item">
+                    <strong>Quanto devo investir em anúncios?</strong>
+                    <p>Recomendamos começar com R$ 20-30/dia (R$ 600-900/mês) para testar. Depois, você pode escalar conforme os resultados.</p>
+                </div>
+                <div class="faq-item">
+                    <strong>Vou conseguir gerenciar sozinha?</strong>
+                    <p>Sim! Com o guia passo a passo, dashboard e checklist, você terá autonomia total. Mas também oferecemos suporte adicional se precisar.</p>
+                </div>
+                <div class="faq-item">
+                    <strong>O que é a Dashboard de Métricas?</strong>
+                    <p>É um painel exclusivo dentro do seu site onde você vê em tempo real: visitantes, conversões, custo por clique, ROI e origem do tráfego. Tudo visual e fácil de entender!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESULTADOS -->
+        <div class="section">
+            <h2>🎯 Resultados Esperados</h2>
+            <p style="margin-bottom: 20px;">Com este projeto implementado, você poderá:</p>
+            <div class="results-grid">
+                <div class="result-item">
+                    <p>Captar leads qualificados diariamente</p>
+                </div>
+                <div class="result-item">
+                    <p>Medir conversões com precisão</p>
+                </div>
+                <div class="result-item">
+                    <p>Saber custo exato por lead</p>
+                </div>
+                <div class="result-item">
+                    <p>Otimizar com dados reais</p>
+                </div>
+                <div class="result-item">
+                    <p>Escalar investimento com segurança</p>
+                </div>
+                <div class="result-item">
+                    <p>Ter autonomia total</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA FINAL -->
+        <div class="cta-section">
+            <h2>Vamos transformar visitantes em clientes? 🚀</h2>
+            <p>Estamos prontos para começar assim que você aprovar!</p>
+            <p style="font-size: 1em; margin-top: 20px; opacity: 0.9;">Entre em contato pelo WhatsApp para aprovar a proposta</p>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-logo">
+                <div class="footer-logo-circle">D</div>
+                <div class="footer-logo-text">Digitalizar</div>
+            </div>
+            <h3>Contato</h3>
+            <p>Marketing Digital Profissional</p>
+            <p>WhatsApp: <a href="#">[Seu número]</a></p>
+            <p>E-mail: <a href="#">[Seu e-mail]</a></p>
+            <p>Site: <a href="https://digitalizarmkt.com.br">digitalizarmkt.com.br</a></p>
+
+            <div class="footer-note">
+                <p>Proposta válida por 15 dias a partir da data de emissão.</p>
+                <p>© 2025 Digitalizar - Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

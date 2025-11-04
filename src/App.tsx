@@ -16,6 +16,12 @@ import DashboardPostForm from "./pages/DashboardPostForm";
 import DashboardAuthorProfile from "./pages/DashboardAuthorProfile";
 import NotFound from "./pages/NotFound";
 
+// Landing Pages Google Ads
+import AgendamentoA from "./pages/AgendamentoA";
+import AgendamentoB from "./pages/AgendamentoB";
+import AgendamentoC from "./pages/AgendamentoC";
+import AgendamentoD from "./pages/AgendamentoD";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -31,6 +37,12 @@ const App = () => (
           <Route path="/contato" element={<Contato />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+
+          {/* Landing Pages Google Ads - Teste A/B */}
+          <Route path="/agendamento-a" element={<AgendamentoA />} />
+          <Route path="/agendamento-b" element={<AgendamentoB />} />
+          <Route path="/agendamento-c" element={<AgendamentoC />} />
+          <Route path="/agendamento-d" element={<AgendamentoD />} />
 
           {/* Dashboard Routes */}
           <Route path="/login" element={<Login />} />
