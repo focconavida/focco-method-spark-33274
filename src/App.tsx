@@ -21,6 +21,11 @@ import AgendamentoA from "./pages/AgendamentoA";
 import AgendamentoB from "./pages/AgendamentoB";
 import AgendamentoC from "./pages/AgendamentoC";
 import AgendamentoD from "./pages/AgendamentoD";
+import AgendamentoE from "./pages/AgendamentoE";
+import AgendamentoF from "./pages/AgendamentoF";
+import AgendamentoG from "./pages/AgendamentoG";
+import AgendamentoH from "./pages/AgendamentoH";
+import Obrigado from "./pages/Obrigado";
 
 const queryClient = new QueryClient();
 
@@ -43,6 +48,13 @@ const App = () => (
           <Route path="/agendamento-b" element={<AgendamentoB />} />
           <Route path="/agendamento-c" element={<AgendamentoC />} />
           <Route path="/agendamento-d" element={<AgendamentoD />} />
+          <Route path="/agendamento-e" element={<AgendamentoE />} />
+          <Route path="/agendamento-f" element={<AgendamentoF />} />
+          <Route path="/agendamento-g" element={<AgendamentoG />} />
+          <Route path="/agendamento-h" element={<AgendamentoH />} />
+
+          {/* Página de Confirmação */}
+          <Route path="/obrigado" element={<Obrigado />} />
 
           {/* Dashboard Routes */}
           <Route path="/login" element={<Login />} />
