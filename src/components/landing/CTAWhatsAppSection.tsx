@@ -4,13 +4,14 @@
  */
 
 import { Button } from '@/components/ui/button';
+import { trackGoogleAdsConversion } from '@/utils/analytics';
 
 interface CTAWhatsAppSectionProps {
   headline: string;
   subheadline?: string;
   whatsappMessage: string;
   whatsappNumber: string;
-  variant: 'a' | 'b' | 'c' | 'd';
+  variant: 'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h';
   urgencia?: boolean;
 }
 
@@ -29,8 +30,12 @@ export const CTAWhatsAppSection = ({
     if (typeof window !== 'undefined' && window.gtag) {
       window.gtag('event', `whatsapp_click_landing_${variant}`, {
         page_variant: variant,
+        conversion_location: 'cta_section',
       });
     }
+
+    // Track Google Ads Conversion
+    trackGoogleAdsConversion();
   };
 
   return (

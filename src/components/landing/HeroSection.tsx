@@ -4,6 +4,7 @@
  */
 
 import { Button } from '@/components/ui/button';
+import { trackGoogleAdsConversion } from '@/utils/analytics';
 
 interface HeroSectionProps {
   variant: 'executiva' | 'transicao' | 'empreendedor' | 'proposito';
@@ -52,6 +53,11 @@ export const HeroSection = ({
 }: HeroSectionProps) => {
   const config = variantConfig[variant];
 
+  const handleSecondaryClick = () => {
+    // Track Google Ads Conversion when clicking WhatsApp button
+    trackGoogleAdsConversion();
+  };
+
   return (
     <section className={`relative min-h-[85vh] flex items-center justify-center bg-gradient-to-br ${config.gradient} pt-32 pb-16`}>
       <div className="container-custom px-6 sm:px-8 md:px-12 lg:px-16">
@@ -78,7 +84,7 @@ export const HeroSection = ({
             </Button>
 
             {ctaSecondary && (
-              <a href={ctaSecondary.href} target="_blank" rel="noopener noreferrer">
+              <a href={ctaSecondary.href} target="_blank" rel="noopener noreferrer" onClick={handleSecondaryClick}>
                 <Button
                   size="lg"
                   variant="outline"
