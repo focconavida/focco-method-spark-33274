@@ -39,7 +39,7 @@ const AgendamentoE = () => {
 
       <div className="pt-24 md:pt-32">
         <HeroSection
-          variant="mae-executiva"
+          variant="executiva"
           headline="Você se sente a pior mãe do mundo porque trabalha demais?"
           subheadline="Seja excelente profissional E mãe presente. Sim, é possível ter os dois sem culpa."
           ctaPrimary={{

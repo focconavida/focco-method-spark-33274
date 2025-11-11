@@ -39,7 +39,7 @@ const AgendamentoF = () => {
 
       <div className="pt-24 md:pt-32">
         <HeroSection
-          variant="provedor"
+          variant="transicao"
           headline="Sustenta a família mas morre por dentro todo dia?"
           subheadline="Mude de vida COM SEGURANÇA. Plano de transição sem perder renda e sem colocar família em risco."
           ctaPrimary={{

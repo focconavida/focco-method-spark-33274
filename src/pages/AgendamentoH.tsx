@@ -39,7 +39,7 @@ const AgendamentoH = () => {
 
       <div className="pt-24 md:pt-32">
         <HeroSection
-          variant="jovem-ansioso"
+          variant="transicao"
           headline="Conseguiu o emprego dos sonhos mas vive com medo de ser demitido?"
           subheadline="Vença a síndrome do impostor. Desenvolva confiança REAL e alta performance sem ansiedade paralisante."
           ctaPrimary={{

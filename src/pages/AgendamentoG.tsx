@@ -39,7 +39,7 @@ const AgendamentoG = () => {
 
       <div className="pt-24 md:pt-32">
         <HeroSection
-          variant="liberal"
+          variant="executiva"
           headline="Sua agenda está lotada mas você está vazia por dentro?"
           subheadline="Consultório sustentável: ganhe mais atendendo menos. Tenha agenda que respeita SUA vida."
           ctaPrimary={{
