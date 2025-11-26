@@ -22,3 +22,15 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment & Credentials (CRITICAL - NEVER COMMIT!)
+.env
+.env.local
+.env.production
+.dev.vars
+*.json
+!package.json
+!package-lock.json
+!tsconfig*.json
+!components.json
+!wrangler.json

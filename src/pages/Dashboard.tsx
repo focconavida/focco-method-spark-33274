@@ -3,6 +3,7 @@ import { useBlogPosts } from '@/hooks/useBlogPosts';
 import { useAuth } from '@/hooks/useAuth';
 import { Link, Navigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { AnalyticsDashboard } from '@/components/analytics/AnalyticsDashboard';
 import {
   FileText,
   Eye,
@@ -101,6 +102,9 @@ const Dashboard = () => {
             );
           })}
         </div>
+
+        {/* Analytics Dashboard */}
+        <AnalyticsDashboard />
 
         {/* Recent Posts */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200">
