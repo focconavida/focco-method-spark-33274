@@ -62,15 +62,17 @@ export const CTAWhatsAppSection = ({
           )}
 
           {/* Botão WhatsApp */}
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" onClick={handleClick}>
-            <Button
-              size="lg"
-              className="bg-[#25D366] hover:bg-[#20BA5A] text-white text-lg px-12 py-7 rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 mt-4"
-            >
-              <i className="fab fa-whatsapp mr-3 text-2xl"></i>
-              Conversar no WhatsApp Agora
-            </Button>
-          </a>
+          <div className="px-4">
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" onClick={handleClick}>
+              <Button
+                size="lg"
+                className="bg-[#25D366] hover:bg-[#20BA5A] text-white text-base md:text-lg px-6 md:px-12 py-6 md:py-7 rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 mt-4 w-full md:w-auto"
+              >
+                <i className="fab fa-whatsapp mr-2 md:mr-3 text-xl md:text-2xl"></i>
+                <span className="break-words">Conversar no WhatsApp Agora</span>
+              </Button>
+            </a>
+          </div>
 
           <p className="text-sm opacity-80 mt-4">
             Resposta em até 2h no horário comercial • Sem compromisso
