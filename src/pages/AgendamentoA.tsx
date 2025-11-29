@@ -55,7 +55,7 @@ const AgendamentoA = () => {
         ctaSecondary={{
           text: 'Falar no WhatsApp',
           icon: '💬',
-          href: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá! Estou passando por burnout/ansiedade no trabalho e preciso de ajuda. Vi seu anúncio no Google e quero agendar minha sessão diagnóstica gratuita.')}`,
+          href: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá! Quero conhecer o Método FOCCO e entender como funciona.')}`,
         }}
         proofText="⭐ Mais de 300 profissionais recuperaram o equilíbrio e a saúde mental"
         onCtaPrimaryClick={scrollToForm}
