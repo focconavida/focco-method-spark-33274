@@ -112,7 +112,7 @@ const Index = () => {
       >
         <div className="container-custom text-center relative z-10 px-4">
           <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
-            <h1 className="text-primary-foreground font-heading font-bold leading-tight">
+            <h1 className="text-primary-foreground font-heading font-bold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-5xl">
               Transforme sua vida com o Método FOCCO
             </h1>
             <p className="text-xl md:text-2xl text-primary-foreground/90 leading-relaxed max-w-3xl mx-auto">
@@ -332,12 +332,14 @@ const Index = () => {
             <p className="text-xl text-primary-foreground/90 leading-relaxed">
               Fale conosco no WhatsApp e descubra como o Método FOCCO pode transformar sua vida pessoal e profissional.
             </p>
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="block mt-8">
-              <Button className="bg-accent hover:bg-accent-light text-accent-foreground text-lg px-12 py-6 rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all hover:scale-105">
-                <i className="fab fa-whatsapp mr-3"></i>
-                Falar no WhatsApp
-              </Button>
-            </a>
+            <div className="flex justify-center px-4 sm:px-6 mt-8">
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto max-w-md">
+                <Button className="bg-accent hover:bg-accent-light text-accent-foreground text-lg px-8 md:px-12 py-6 rounded-xl font-semibold shadow-xl hover:shadow-2xl transition-all hover:scale-105 w-full">
+                  <i className="fab fa-whatsapp mr-3"></i>
+                  Falar no WhatsApp
+                </Button>
+              </a>
+            </div>
             <p className="text-primary-foreground/70 text-sm mt-4">
               Sem compromisso • Primeira sessão gratuita • Resposta em 24h
             </p>

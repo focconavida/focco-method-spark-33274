@@ -62,14 +62,14 @@ export const CTAWhatsAppSection = ({
           )}
 
           {/* Botão WhatsApp */}
-          <div className="px-4">
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" onClick={handleClick}>
+          <div className="flex justify-center px-4 sm:px-6">
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" onClick={handleClick} className="w-full sm:w-auto max-w-md">
               <Button
                 size="lg"
-                className="bg-[#25D366] hover:bg-[#20BA5A] text-white text-base md:text-lg px-6 md:px-12 py-6 md:py-7 rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 mt-4 w-full md:w-auto"
+                className="bg-[#25D366] hover:bg-[#20BA5A] text-white text-base md:text-lg px-6 md:px-10 py-6 md:py-7 rounded-xl font-bold shadow-xl hover:shadow-2xl transition-all hover:scale-105 mt-4 w-full"
               >
-                <i className="fab fa-whatsapp mr-2 md:mr-3 text-xl md:text-2xl"></i>
-                <span className="break-words">Conversar no WhatsApp Agora</span>
+                <i className="fab fa-whatsapp mr-2 text-xl md:text-2xl"></i>
+                <span className="break-words">Conversar no WhatsApp</span>
               </Button>
             </a>
           </div>

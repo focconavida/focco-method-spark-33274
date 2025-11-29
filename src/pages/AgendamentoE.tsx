@@ -51,7 +51,7 @@ const AgendamentoE = () => {
             icon: '💬',
             href: `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá! Vi a página para Mães Executivas e gostaria de conversar.')}`,
           }}
-          proofText="⭐ Mais de 100 mães executivas recuperaram o equilíbrio família-trabalho"
+          proofText="⭐ Mais de 300 mães executivas recuperaram o equilíbrio família-trabalho"
           onCtaPrimaryClick={scrollToForm}
         />
 

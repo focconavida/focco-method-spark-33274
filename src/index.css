@@ -119,7 +119,7 @@
   }
   
   h1 {
-    @apply text-5xl md:text-6xl lg:text-7xl;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl;
   }
   
   h2 {
