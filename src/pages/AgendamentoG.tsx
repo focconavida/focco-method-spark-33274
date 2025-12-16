@@ -124,7 +124,7 @@ const AgendamentoG = () => {
 
         <FormularioSection
           titulo="Construa consultório sustentável"
-          subtitulo="Sessão diagnóstica gratuita para profissionais liberais que querem sucesso SEM burnout"
+          subtitulo="Sessão diagnóstica para profissionais liberais que querem sucesso SEM burnout"
           ctaText="📅 Quero agenda sustentável"
           variant="g"
         />

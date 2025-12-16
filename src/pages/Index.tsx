@@ -341,7 +341,7 @@ const Index = () => {
               </a>
             </div>
             <p className="text-primary-foreground/70 text-sm mt-4">
-              Sem compromisso • Primeira sessão gratuita • Resposta em 24h
+              Sem compromisso • Resposta em 24h
             </p>
           </div>
         </div>

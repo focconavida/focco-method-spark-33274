@@ -133,7 +133,7 @@ const AgendamentoA = () => {
 
       {/* FORMULÁRIO SECTION */}
       <FormularioSection
-        titulo="Agende sua Sessão Diagnóstica Gratuita"
+        titulo="Agende sua Sessão Diagnóstica"
         subtitulo="60 minutos para identificar seu padrão de esgotamento e traçar um caminho de equilíbrio sustentável"
         ctaText="💫 Quero recuperar meu equilíbrio"
         variant="a"

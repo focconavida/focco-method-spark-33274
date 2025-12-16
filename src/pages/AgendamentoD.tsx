@@ -125,7 +125,7 @@ const AgendamentoD = () => {
 
       <FormularioSection
         titulo="Comece sua jornada de autodescoberta"
-        subtitulo="Sessão gratuita de 60 min para iniciar seu processo de autoconhecimento profundo"
+        subtitulo="Sessão de 60 min para iniciar seu processo de autoconhecimento profundo"
         ctaText="✨ Quero descobrir meu propósito"
         variant="d"
       />

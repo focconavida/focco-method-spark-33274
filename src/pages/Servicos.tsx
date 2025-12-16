@@ -237,7 +237,7 @@ const Servicos = () => {
               {[
                 {
                   pergunta: 'Como funciona a primeira sessão?',
-                  resposta: 'A primeira sessão é gratuita e serve para nos conhecermos, entender seus objetivos e avaliar se há fit entre suas necessidades e nossa metodologia. Sem compromisso.',
+                  resposta: 'A primeira sessão serve para nos conhecermos, entender seus objetivos e avaliar se há fit entre suas necessidades e nossa metodologia.',
                 },
                 {
                   pergunta: 'Quanto tempo leva para ver resultados?',

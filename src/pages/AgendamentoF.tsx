@@ -124,7 +124,7 @@ const AgendamentoF = () => {
 
         <FormularioSection
           titulo="Plano seguro de transição profissional"
-          subtitulo="Sessão diagnóstica gratuita para traçar caminho de mudança SEM colocar família em risco"
+          subtitulo="Sessão diagnóstica para traçar caminho de mudança SEM colocar família em risco"
           ctaText="🛡️ Quero plano seguro de transição"
           variant="f"
         />

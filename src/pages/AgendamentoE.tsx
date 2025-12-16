@@ -124,7 +124,7 @@ const AgendamentoE = () => {
 
         <FormularioSection
           titulo="Recupere o equilíbrio família-trabalho"
-          subtitulo="Sessão diagnóstica gratuita de 60 min para mães executivas que querem ser excelentes nos dois"
+          subtitulo="Sessão diagnóstica de 60 min para mães executivas que querem ser excelentes nos dois"
           ctaText="💝 Quero equilíbrio SEM culpa"
           variant="e"
         />

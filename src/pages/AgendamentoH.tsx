@@ -124,7 +124,7 @@ const AgendamentoH = () => {
 
         <FormularioSection
           titulo="Vença a síndrome do impostor de uma vez"
-          subtitulo="Sessão diagnóstica gratuita para jovens profissionais com ansiedade e insegurança"
+          subtitulo="Sessão diagnóstica para jovens profissionais com ansiedade e insegurança"
           ctaText="💪 Quero desenvolver confiança real"
           variant="h"
         />

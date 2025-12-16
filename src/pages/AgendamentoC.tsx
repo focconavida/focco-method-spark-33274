@@ -125,7 +125,7 @@ const AgendamentoC = () => {
 
       <FormularioSection
         titulo="Transforme seu negócio com foco estratégico"
-        subtitulo="Sessão diagnóstica gratuita para identificar gargalos e traçar plano de crescimento"
+        subtitulo="Sessão diagnóstica para identificar gargalos e traçar plano de crescimento"
         ctaText="🚀 Quero crescer com estratégia"
         variant="c"
       />

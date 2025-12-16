@@ -39,11 +39,6 @@ const Contato = () => {
       descricao: 'Retornamos seu contato em até 24 horas',
     },
     {
-      icon: 'fa-gift',
-      titulo: 'Primeira Sessão Grátis',
-      descricao: 'Conheça o método sem compromisso',
-    },
-    {
       icon: 'fa-calendar-check',
       titulo: 'Agendamento Flexível',
       descricao: 'Horários que se adaptam à sua rotina',
@@ -159,54 +154,6 @@ const Contato = () => {
       {/* Localização Google Maps */}
       <GoogleMapsLocation />
 
-      {/* Sessão Gratuita Highlight */}
-      <section className="section-padding bg-gradient-to-br from-accent/10 via-primary/5 to-background">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <div className="card-elevated bg-gradient-to-br from-accent/5 to-primary/5 border-2 border-accent/30 text-center">
-              <div className="inline-block p-4 bg-accent/10 rounded-full mb-6">
-                <i className="fas fa-gift text-5xl text-accent"></i>
-              </div>
-
-              <h2 className="font-heading text-3xl mb-4">
-                Ganhe uma Sessão Experimental Gratuita
-              </h2>
-
-              <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-                Conheça o Método FOCCO sem compromisso. Agende agora sua sessão experimental
-                gratuita e descubra como podemos ajudar você a alcançar seus objetivos.
-              </p>
-
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button className="btn-accent text-lg px-10 py-6 h-auto">
-                  <i className="fab fa-whatsapp text-2xl mr-3"></i>
-                  Agendar Sessão Gratuita
-                </Button>
-              </a>
-
-              <div className="grid md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-accent/20">
-                <div className="flex items-center justify-center gap-3">
-                  <i className="fas fa-clock text-accent text-xl"></i>
-                  <span className="text-sm">Duração: 60 minutos</span>
-                </div>
-                <div className="flex items-center justify-center gap-3">
-                  <i className="fas fa-video text-accent text-xl"></i>
-                  <span className="text-sm">Online ou Presencial</span>
-                </div>
-                <div className="flex items-center justify-center gap-3">
-                  <i className="fas fa-calendar text-accent text-xl"></i>
-                  <span className="text-sm">Horário Flexível</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Rápido */}
       <section className="section-padding bg-background">
         <div className="container-custom">
@@ -214,17 +161,6 @@ const Contato = () => {
             <h2 className="font-heading text-center mb-12">Perguntas Frequentes</h2>
 
             <div className="space-y-6">
-              <div className="card-outline">
-                <h3 className="font-heading text-lg mb-2 flex items-center gap-2">
-                  <i className="fas fa-question-circle text-accent"></i>
-                  Como funciona a primeira sessão gratuita?
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed ml-7">
-                  É uma sessão experimental de 60 minutos onde você conhecerá o Método FOCCO,
-                  conversaremos sobre seus objetivos e você poderá tirar todas as suas dúvidas sem compromisso.
-                </p>
-              </div>
-
               <div className="card-outline">
                 <h3 className="font-heading text-lg mb-2 flex items-center gap-2">
                   <i className="fas fa-question-circle text-accent"></i>

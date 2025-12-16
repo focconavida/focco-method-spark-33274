@@ -215,13 +215,13 @@ const BlogPost = () => {
             Pronto para transformar sua vida?
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            Agende uma sessão de diagnóstico gratuita e descubra como o Método FOCCO pode ajudá-lo
+            Agende uma sessão de diagnóstico e descubra como o Método FOCCO pode ajudá-lo
           </p>
           <Link
             to="/contato"
             className="inline-block px-8 py-4 bg-white text-[#8B5CF6] rounded-full font-semibold hover:bg-gray-100 transition-colors"
           >
-            Agendar Consulta Gratuita
+            Agendar Consulta
           </Link>
         </div>
       </section>

@@ -125,7 +125,7 @@ const AgendamentoB = () => {
 
       <FormularioSection
         titulo="Descubra qual carreira te realizaria de verdade"
-        subtitulo="Sessão diagnóstica gratuita de 60 min para identificar seu propósito profissional"
+        subtitulo="Sessão diagnóstica de 60 min para identificar seu propósito profissional"
         ctaText="🎯 Quero clareza para mudar"
         variant="b"
       />
