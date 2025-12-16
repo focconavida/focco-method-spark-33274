@@ -3,44 +3,141 @@
   <!-- Páginas Principais -->
   <url>
     <loc>https://focconavida.com.br/</loc>
-    <lastmod>2025-12-02</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://focconavida.com.br/sobre</loc>
-    <lastmod>2025-11-16</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://focconavida.com.br/metodo</loc>
-    <lastmod>2025-11-16</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://focconavida.com.br/servicos</loc>
-    <lastmod>2025-11-16</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://focconavida.com.br/contato</loc>
-    <lastmod>2025-11-16</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://focconavida.com.br/blog</loc>
-    <lastmod>2025-12-03</lastmod>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Artigos do Blog (29 artigos - Atualizado em 03/12/2025) -->
+  <!-- =====================================================
+       ARTIGOS DO BLOG - ATUALIZADOS EM 16/12/2025
+       Total: 49+ artigos
+  ===================================================== -->
 
-  <!-- NOVOS POSTS - 03/12/2025 -->
+  <!-- DIA 38 (11/12/2025) - ÚLTIMOS ARTIGOS PUBLICADOS -->
+  <url>
+    <loc>https://focconavida.com.br/blog/meditacao-para-quem-nao-consegue-parar-de-pensar</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://focconavida.com.br/blog/como-sair-da-zona-de-conforto-sem-se-perder</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- DIA 37 (10/12/2025) -->
+  <url>
+    <loc>https://focconavida.com.br/blog/como-definir-metas-que-vai-alcançar</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://focconavida.com.br/blog/inteligencia-emocional-trabalho-guia-pratico</loc>
+    <lastmod>2025-12-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- DIA 36 (09/12/2025) -->
+  <url>
+    <loc>https://focconavida.com.br/blog/autocompaixao-habilidade-essencial</loc>
+    <lastmod>2025-12-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://focconavida.com.br/blog/sindrome-burnout-12-sinais-alerta</loc>
+    <lastmod>2025-12-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- DIA 35 (08/12/2025) -->
+  <url>
+    <loc>https://focconavida.com.br/blog/como-criar-rotina-matinal-transformadora</loc>
+    <lastmod>2025-12-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- DIA 34 (07/12/2025) -->
+  <url>
+    <loc>https://focconavida.com.br/blog/desenvolvimento-pessoal-vs-terapia-diferencas</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- DIA 33 (06/12/2025) -->
+  <url>
+    <loc>https://focconavida.com.br/blog/10-sinais-precisa-coaching-profissional</loc>
+    <lastmod>2025-12-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://focconavida.com.br/blog/tecnicas-respiracao-exercicios-ansiedade</loc>
+    <lastmod>2025-12-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- DIA 32 (05/12/2025) -->
+  <url>
+    <loc>https://focconavida.com.br/blog/como-escolher-coach-criterios-essenciais</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://focconavida.com.br/blog/mindfulness-para-iniciantes-guia-pratico</loc>
+    <lastmod>2025-12-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- DIA 31 (04/12/2025) -->
+  <url>
+    <loc>https://focconavida.com.br/blog/metodo-focco-guia-completo</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- DIA 30 (03/12/2025) -->
   <url>
     <loc>https://focconavida.com.br/blog/lidar-adversidades-vida-tranquila</loc>
     <lastmod>2025-12-03</lastmod>
@@ -54,7 +151,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- POSTS ANTERIORES - 24/11/2025 -->
+  <!-- POSTS ANTERIORES (24/11/2025) -->
   <url>
     <loc>https://focconavida.com.br/blog/voce-vive-no-automatico</loc>
     <lastmod>2025-11-24</lastmod>
@@ -73,8 +170,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- POSTS ATUALIZADOS COM IMAGENS - 24/11/2025 -->
   <url>
     <loc>https://focconavida.com.br/blog/desenvolver-habilidades-profissional-sucesso-sem-adoecer</loc>
     <lastmod>2025-11-24</lastmod>
@@ -94,7 +189,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- POSTS ANTERIORES -->
+  <!-- POSTS FASE 1 -->
   <url>
     <loc>https://focconavida.com.br/blog/transicao-de-carreira-com-qualidade</loc>
     <lastmod>2025-11-04</lastmod>
@@ -221,4 +316,5 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
 </urlset>
