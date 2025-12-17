@@ -28,7 +28,7 @@ const Servicos = () => {
       detalhes: {
         duracao: '1h30 por sessão',
         frequencia: 'Semanal ou quinzenal',
-        paraQuem: 'Profissionais, empreendedores e líderes que buscam transformação profunda e resultados sustentáveis',
+        paraQuem: 'Profissionais, empreendedores, líderes e portadores de dor crônica que buscam transformação profunda e resultados sustentáveis',
       },
     },
     {
@@ -98,7 +98,7 @@ const Servicos = () => {
         'Resultados mensuráveis ao longo do tempo',
       ],
       detalhes: {
-        duracao: 'Programas de 6 a 12 meses',
+        duracao: 'Programas de 8 a 12 encontros',
         frequencia: 'Encontros regulares (semanal ou quinzenal)',
         paraQuem: 'Pessoas comprometidas com transformação profunda e que valorizam o processo gradual',
       },
