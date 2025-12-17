@@ -34,53 +34,8 @@ const Sobre = () => {
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="font-heading mb-6">Sobre o FOCCO</h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Conheça nossa missão, visão, valores e a história de quem idealizou o método
+              Conheça a história de quem idealizou o método, nossa missão, visão e valores
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Missão, Visão, Valores */}
-      <section className="section-padding bg-muted/30">
-        <div className="container-custom">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="card-elevated text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i className="fas fa-bullseye text-3xl text-primary"></i>
-              </div>
-              <h3 className="font-heading text-2xl mb-4">Missão</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Guiar pessoas na jornada de autoconhecimento e transformação, desenvolvendo clareza mental e inteligência emocional para vidas mais plenas e realizadas.
-              </p>
-            </div>
-            
-            <div className="card-elevated text-center">
-              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i className="fas fa-eye text-3xl text-accent"></i>
-              </div>
-              <h3 className="font-heading text-2xl mb-4">Visão</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Ser referência em desenvolvimento pessoal integrado, reconhecidos pela qualidade das transformações que facilitamos e pelo impacto positivo na vida das pessoas.
-              </p>
-            </div>
-            
-            <div className="card-elevated text-center">
-              <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                <i className="fas fa-gem text-3xl text-success"></i>
-              </div>
-              <h3 className="font-heading text-2xl mb-4">Valores</h3>
-              <div className="space-y-3 text-left">
-                {valores.map((valor, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <i className={`fas ${valor.icon} text-primary mt-1`}></i>
-                    <div>
-                      <h4 className="font-semibold">{valor.title}</h4>
-                      <p className="text-sm text-muted-foreground">{valor.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -237,6 +192,51 @@ const Sobre = () => {
                     <p className="text-sm text-muted-foreground">Certificada pelo MEC</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Missão, Visão, Valores */}
+      <section className="section-padding bg-muted/30">
+        <div className="container-custom">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="card-elevated text-center">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i className="fas fa-bullseye text-3xl text-primary"></i>
+              </div>
+              <h3 className="font-heading text-2xl mb-4">Missão</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Guiar pessoas na jornada de autoconhecimento e transformação, desenvolvendo clareza mental e inteligência emocional para vidas mais plenas e realizadas.
+              </p>
+            </div>
+
+            <div className="card-elevated text-center">
+              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i className="fas fa-eye text-3xl text-accent"></i>
+              </div>
+              <h3 className="font-heading text-2xl mb-4">Visão</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Ser referência em desenvolvimento pessoal integrado, reconhecidos pela qualidade das transformações que facilitamos e pelo impacto positivo na vida das pessoas.
+              </p>
+            </div>
+
+            <div className="card-elevated text-center">
+              <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i className="fas fa-gem text-3xl text-success"></i>
+              </div>
+              <h3 className="font-heading text-2xl mb-4">Valores</h3>
+              <div className="space-y-3 text-left">
+                {valores.map((valor, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <i className={`fas ${valor.icon} text-primary mt-1`}></i>
+                    <div>
+                      <h4 className="font-semibold">{valor.title}</h4>
+                      <p className="text-sm text-muted-foreground">{valor.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
