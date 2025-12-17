@@ -50,7 +50,7 @@ const Bio2 = () => {
                 Valéria Dias
               </h1>
               <p className="text-[#8B9D83] text-sm md:text-base font-semibold">
-                Psicóloga | Especialista em Mindfulness
+                Terapeuta, Mentora e Profissional
               </p>
               <div className="inline-block bg-gradient-to-r from-[#8B9D83]/10 to-[#D4A574]/10 px-5 py-2 rounded-full">
                 <p className="text-[#2C5F6F] text-base md:text-lg font-bold">

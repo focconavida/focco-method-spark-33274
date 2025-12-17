@@ -50,7 +50,7 @@ const Bio1 = () => {
                 Valéria Dias
               </h1>
               <p className="text-[#2C5F6F]/70 text-sm md:text-base font-semibold">
-                Psicóloga | Mestre & Profissional
+                Terapeuta, Mentora e Profissional
               </p>
               <p className="text-[#D4A574] text-base md:text-lg font-bold tracking-wide">
                 MÉTODO FOCCO

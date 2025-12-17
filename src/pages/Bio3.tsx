@@ -58,7 +58,7 @@ const Bio3 = () => {
                 Valéria Dias
               </h1>
               <p className="text-[#2C5F6F] text-sm sm:text-base font-semibold">
-                Psicóloga | Mestre & Profissional
+                Terapeuta, Mentora e Profissional
               </p>
               <div className="inline-block bg-gradient-to-r from-[#2C5F6F] to-[#4A9BAD] px-6 py-2 rounded-full shadow-lg">
                 <p className="text-white text-base sm:text-lg font-bold tracking-wider">
