@@ -134,6 +134,9 @@ const Index = () => {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent"></div>
       </section>
 
+      {/* Prova Social - Logo após Hero */}
+      <ProvaSocial />
+
       {/* Pilares FOCCO Section - Cards Verticais */}
       <section className="section-padding bg-gradient-to-b from-background to-muted">
         <div className="container-custom">
@@ -242,9 +245,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Prova Social - Métricas */}
-      <ProvaSocial />
 
       {/* Avaliações Google Section */}
       <section className="section-padding bg-background">
