@@ -1,8 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import valeriaProfile from '@/assets/valeria-profile.jpg';
-import valeriaFoto from '@/assets/valeria-foto.png';
 
 const Sobre = () => {
   const whatsappNumber = '5583993787450';
@@ -26,29 +24,6 @@ const Sobre = () => {
     },
   ];
 
-  const diferenciais = [
-    {
-      icon: 'fa-chart-line',
-      title: 'Abordagem Científica',
-      text: 'Neurociência, mindfulness e comportamento.',
-    },
-    {
-      icon: 'fa-user-check',
-      title: 'Personalização Total',
-      text: 'Cada jornada é única, com planos adaptados às suas necessidades específicas.',
-    },
-    {
-      icon: 'fa-handshake',
-      title: 'Suporte Contínuo',
-      text: 'Acompanhamento próximo durante toda sua jornada de transformação.',
-    },
-    {
-      icon: 'fa-trophy',
-      title: 'Resultados Mensuráveis',
-      text: 'Ferramentas e métricas para acompanhar sua evolução de forma concreta.',
-    },
-  ];
-
   return (
     <div className="min-h-screen">
       <Header />
@@ -57,38 +32,10 @@ const Sobre = () => {
       <section className="pt-56 pb-20 bg-gradient-to-b from-primary/5 to-background">
         <div className="container-custom px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="font-heading mb-6">Sobre o Método FOCCO</h1>
+            <h1 className="font-heading mb-6">Sobre o FOCCO</h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Uma jornada de autoconhecimento, clareza mental e transformação profunda para alcançar seu máximo potencial.
+              Conheça nossa missão, visão, valores e a história de quem idealizou o método
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* História Section */}
-      <section className="section-padding bg-background">
-        <div className="container-custom">
-          <div className="grid md:grid-cols-5 gap-8 items-start">
-            <div className="md:col-span-3 space-y-6">
-              <h2 className="font-heading">Nossa História</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                O Método FOCCO nasceu da observação de que muitas pessoas talentosas e dedicadas vivem vidas que não refletem seu verdadeiro potencial. Apesar de conquistas externas, sentem-se perdidas, desconectadas de seu propósito e sobrecarregadas emocionalmente.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Desenvolvido ao longo de anos de estudo em neurociência, psicologia positiva e inteligência emocional, o método integra ferramentas práticas com autoconhecimento profundo, criando um caminho claro para a transformação sustentável.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Hoje, já ajudamos centenas de pessoas a encontrarem clareza, propósito e equilíbrio - tanto na vida pessoal quanto profissional.
-              </p>
-            </div>
-            <div className="md:col-span-2 relative max-w-sm mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl transform rotate-3"></div>
-              <img
-                src={valeriaFoto}
-                alt="Valéria Dias - Fundadora do Método FOCCO"
-                className="relative rounded-2xl shadow-xl w-full"
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -134,33 +81,6 @@ const Sobre = () => {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Diferenciais Section */}
-      <section className="section-padding bg-background">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="font-heading mb-4">Nossos Diferenciais</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              O que torna o Método FOCCO único e eficaz
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {diferenciais.map((diferencial, index) => (
-              <div key={index} className="card-outline group">
-                <div className="flex gap-6">
-                  <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors">
-                    <i className={`fas ${diferencial.icon} text-2xl text-primary group-hover:text-primary-foreground transition-colors`}></i>
-                  </div>
-                  <div>
-                    <h3 className="font-heading text-xl mb-2">{diferencial.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{diferencial.text}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>

@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import GoogleReviews from '@/components/GoogleReviews';
 import ProvaSocial from '@/components/ProvaSocial';
+import NossaHistoria from '@/components/NossaHistoria';
 import heroImage from '@/assets/hero-bg.jpg';
 
 const Index = () => {
@@ -94,6 +95,29 @@ const Index = () => {
     { icon: 'fa-handshake', text: 'Relacionamentos saudáveis' },
   ];
 
+  const diferenciais = [
+    {
+      icon: 'fa-chart-line',
+      title: 'Abordagem Científica',
+      text: 'Neurociência, mindfulness e comportamento.',
+    },
+    {
+      icon: 'fa-user-check',
+      title: 'Personalização Total',
+      text: 'Cada jornada é única, com planos adaptados às suas necessidades específicas.',
+    },
+    {
+      icon: 'fa-handshake',
+      title: 'Suporte Contínuo',
+      text: 'Acompanhamento próximo durante toda sua jornada de transformação.',
+    },
+    {
+      icon: 'fa-trophy',
+      title: 'Resultados Mensuráveis',
+      text: 'Ferramentas e métricas para acompanhar sua evolução de forma concreta.',
+    },
+  ];
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -179,6 +203,36 @@ const Index = () => {
                     <p className="text-base text-primary-foreground/95 leading-relaxed">
                       {pilar.description}
                     </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Nossa História */}
+      <NossaHistoria />
+
+      {/* Diferenciais Section */}
+      <section className="section-padding bg-muted/30">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="font-heading mb-4">Nossos Diferenciais</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              O que torna o Método FOCCO único e eficaz
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {diferenciais.map((diferencial, index) => (
+              <div key={index} className="card-outline group">
+                <div className="flex gap-6">
+                  <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-primary transition-colors">
+                    <i className={`fas ${diferencial.icon} text-2xl text-primary group-hover:text-primary-foreground transition-colors`}></i>
+                  </div>
+                  <div>
+                    <h3 className="font-heading text-xl mb-2">{diferencial.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{diferencial.text}</p>
                   </div>
                 </div>
               </div>
