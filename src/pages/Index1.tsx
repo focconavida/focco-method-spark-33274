@@ -8,7 +8,6 @@ import QuemSou from '@/components/QuemSou';
 import Credenciais from '@/components/Credenciais';
 import NossaHistoria from '@/components/NossaHistoria';
 import heroImage from '@/assets/hero-bg.jpg';
-import beneficiosImage from '@/assets/beneficios-focco.jpg';
 
 const Index1 = () => {
   const whatsappNumber = '5583993787450';
@@ -239,29 +238,22 @@ const Index1 = () => {
       {/* Benefícios Section */}
       <section className="section-padding bg-background">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
               <h2 className="font-heading mb-6">Benefícios da Transformação</h2>
-              <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+              <p className="text-muted-foreground text-lg leading-relaxed">
                 Desenvolva as habilidades essenciais para uma vida plena e uma carreira de sucesso, com equilíbrio entre realização pessoal e profissional.
               </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {beneficios.map((beneficio, index) => (
-                  <div key={index} className="flex items-center gap-3 group">
-                    <div className="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-success transition-colors">
-                      <i className={`fas ${beneficio.icon} text-success group-hover:text-success-foreground transition-colors`}></i>
-                    </div>
-                    <span className="font-semibold">{beneficio.text}</span>
-                  </div>
-                ))}
-              </div>
             </div>
-            <div className="relative">
-              <img
-                src={beneficiosImage}
-                alt="Benefícios do Método FOCCO"
-                className="rounded-2xl shadow-xl"
-              />
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {beneficios.map((beneficio, index) => (
+                <div key={index} className="flex flex-col items-center text-center gap-4 p-6 rounded-xl border border-border hover:border-primary/30 hover:shadow-md transition-all group">
+                  <div className="w-16 h-16 bg-success/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-success transition-colors">
+                    <i className={`fas ${beneficio.icon} text-2xl text-success group-hover:text-success-foreground transition-colors`}></i>
+                  </div>
+                  <span className="font-semibold text-foreground">{beneficio.text}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
