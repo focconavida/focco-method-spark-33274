@@ -26,7 +26,7 @@ const Contato = () => {
     {
       icon: 'fa-instagram',
       titulo: 'Instagram',
-      valor: '@metodofocco',
+      valor: '@focconavida',
       link: '#',
       descricao: 'Siga-nos nas redes sociais',
     },
