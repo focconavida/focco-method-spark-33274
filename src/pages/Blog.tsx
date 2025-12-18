@@ -1,24 +1,42 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { BlogCard } from '@/components/BlogCard';
 import { useBlogPosts } from '@/hooks/useBlogPosts';
-import { Search, Loader2 } from 'lucide-react';
+import { Search, Loader2, X } from 'lucide-react';
 
 const Blog = () => {
   const { data: posts, isLoading, error } = useBlogPosts();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
-  // Filtrar posts por busca e categoria
+  // Pegar tag da URL ao carregar
+  useEffect(() => {
+    const tagFromUrl = searchParams.get('tag');
+    if (tagFromUrl) {
+      setSelectedTag(tagFromUrl);
+    }
+  }, [searchParams]);
+
+  // Filtrar posts por busca, categoria e tag
   const filteredPosts = posts?.filter((post) => {
     const matchesSearch =
       post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory =
       selectedCategory === 'all' || post.category === selectedCategory;
-    return matchesSearch && matchesCategory;
+    const matchesTag =
+      !selectedTag || (post.tags && post.tags.includes(selectedTag));
+    return matchesSearch && matchesCategory && matchesTag;
   });
+
+  const clearTagFilter = () => {
+    setSelectedTag(null);
+    setSearchParams({});
+  };
 
   // Extrair categorias únicas
   const categories = ['all', ...new Set(posts?.map((post) => post.category).filter(Boolean))];
@@ -52,6 +70,22 @@ const Blog = () => {
                 className="w-full pl-12 pr-4 py-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] focus:border-transparent"
               />
             </div>
+
+            {/* Tag Filter Badge */}
+            {selectedTag && (
+              <div className="mt-4 flex justify-center">
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#8B5CF6] text-white rounded-full text-sm font-medium">
+                  <span>Filtrando por tag: #{selectedTag}</span>
+                  <button
+                    onClick={clearTagFilter}
+                    className="hover:bg-white/20 rounded-full p-1 transition-colors"
+                    aria-label="Remover filtro"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Category Filter */}
