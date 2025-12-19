@@ -2,6 +2,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { BlogCard } from '@/components/BlogCard';
+import GoogleReviews from '@/components/GoogleReviews';
 import { useBlogPost, useRelatedPosts } from '@/hooks/useBlogPosts';
 import { Calendar, Clock, Eye, ArrowLeft, Share2, ChevronUp, ThumbsUp, ThumbsDown, Send, Home, ChevronRight, Facebook, Twitter, Linkedin, MessageCircle } from 'lucide-react';
 import { format } from 'date-fns';
@@ -522,6 +523,21 @@ const BlogPost = () => {
                   {feedback === 'not-helpful' ? 'Feedback recebido' : 'Precisa melhorar'}
                 </button>
               </div>
+            </div>
+          </div>
+
+          {/* Google Reviews */}
+          <div className="mt-20 mb-20">
+            <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-10 border border-purple-100">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+                  💬 O que nossos clientes dizem
+                </h3>
+                <p className="text-gray-700 text-lg">
+                  Depoimentos reais de quem transformou sua vida com o Método FOCCO
+                </p>
+              </div>
+              <GoogleReviews />
             </div>
           </div>
 
