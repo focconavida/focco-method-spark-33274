@@ -86,6 +86,26 @@ const BlogPost = () => {
     }
   }, [post?.content, isMarkdown]);
 
+  // Adicionar IDs aos headings HTML para funcionar com o índice
+  useEffect(() => {
+    if (!post?.content || isMarkdown) return;
+
+    // Aguardar o DOM ser atualizado
+    const timer = setTimeout(() => {
+      const contentDiv = document.querySelector('.prose');
+      if (!contentDiv) return;
+
+      const headings = contentDiv.querySelectorAll('h2, h3');
+      headings.forEach((heading) => {
+        const text = heading.textContent || '';
+        const id = text.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+        heading.setAttribute('id', id);
+      });
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [post?.content, isMarkdown]);
+
   const handleShare = async () => {
     const url = window.location.href;
     const title = post?.title || 'Método FOCCO';
