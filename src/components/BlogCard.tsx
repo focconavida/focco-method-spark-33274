@@ -60,9 +60,18 @@ export const BlogCard = ({ post, featured = false }: BlogCardProps) => {
             </h2>
             <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
             <div className="flex items-center gap-3">
-              {post.author_avatar && (
+              {post.author_avatar ? (
                 <img
                   src={post.author_avatar}
+                  alt={post.author}
+                  className="w-10 h-10 rounded-full object-cover ring-2 ring-[#8B5CF6]/20"
+                  onError={(e) => {
+                    e.currentTarget.src = '/assets/valeria-foto-optimized.png';
+                  }}
+                />
+              ) : (
+                <img
+                  src="/assets/valeria-foto-optimized.png"
                   alt={post.author}
                   className="w-10 h-10 rounded-full object-cover ring-2 ring-[#8B5CF6]/20"
                 />
@@ -115,6 +124,30 @@ export const BlogCard = ({ post, featured = false }: BlogCardProps) => {
           {post.title}
         </h3>
         <p className="text-gray-600 text-sm mb-4 line-clamp-2">{post.excerpt}</p>
+
+        <div className="flex items-center gap-2 mb-3 pt-3 border-t border-gray-100">
+          {post.author_avatar ? (
+            <img
+              src={post.author_avatar}
+              alt={post.author}
+              className="w-8 h-8 rounded-full object-cover ring-2 ring-[#8B5CF6]/20"
+              onError={(e) => {
+                e.currentTarget.src = '/assets/valeria-foto-optimized.png';
+              }}
+            />
+          ) : (
+            <img
+              src="/assets/valeria-foto-optimized.png"
+              alt={post.author}
+              className="w-8 h-8 rounded-full object-cover ring-2 ring-[#8B5CF6]/20"
+            />
+          )}
+          <div>
+            <p className="text-xs font-medium text-gray-900">{post.author}</p>
+            <p className="text-[10px] text-gray-500">Autora</p>
+          </div>
+        </div>
+
         {post.tags && post.tags.length > 0 && (
           <div className="flex flex-wrap gap-2">
             {post.tags.slice(0, 3).map((tag) => (
